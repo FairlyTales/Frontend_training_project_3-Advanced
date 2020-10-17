@@ -1,10 +1,8 @@
-//- provide lang and fonts at the start of the project
-
 include mixins
 block vars
 
 doctype html
-html(lang='')
+html(lang='ru')
   head
     meta(charset='UTF-8')
     meta(name='description', content=page_decription)
@@ -13,7 +11,13 @@ html(lang='')
     link(rel='preload', href='/css/style.min.css', as='style')
     link(
       rel='preload',
-      href='/fonts/.woff2',
+      href='/fonts/Oswald-Regular.woff2',
+      as='font',
+      crossorigin='anonymous'
+    )
+    link(
+      rel='preload',
+      href='/fonts/Oswald-Medium.woff2',
       as='font',
       crossorigin='anonymous'
     )

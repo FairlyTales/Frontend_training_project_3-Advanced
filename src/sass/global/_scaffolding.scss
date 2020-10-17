@@ -1,25 +1,25 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
-
 @font-face {
-  font-family: '';
-  font-style: ;
-  font-weight: ;
+  font-family: 'Oswald-Regular';
+  font-style: normal;
+  font-weight: normal;
   font-display: swap;
 
-  src: url('/fonts/.woff2') format('woff2'),
-    url('/fonts/.woff') format('woff');
+  src: url('/fonts/Oswald-Regular.woff') format('woff2'),
+    url('/fonts/Oswald-Regular.woff') format('woff');
 }
-
-
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
   scroll-behavior: smooth;
+  font-size: 100%;
 }
 
-*, *:before, *:after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -28,11 +28,11 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: '', 'Arial', sans-serif;
-  font-size: ;
-  font-style: ;
-  line-height: ;
-  color: ;
+  font-family: 'Oswald-Regular', 'Arial', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  line-height: 1.3em;
+  color: #000;
 }
 
 img {

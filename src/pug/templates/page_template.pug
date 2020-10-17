@@ -1,0 +1,33 @@
+extends templates/layout_default
+
+block vars
+  - var page_id_for_js = "js-";
+  - var page_title = "";
+  - var page_decription = "";
+  - var page_keywords = "";
+
+block header
+  header.page-header
+		.page-header__wrapper
+			nav.main-nav
+				.main-nav__wrapper
+					ul.main-nav__list.main-nav__list--site.site-list
+						li.site-list__item.site-list__item--current-page
+							a.site-list__link Главная
+
+						li.site-list__item
+							a.site-list__link(href='.html')
+
+
+					ul.main-nav__list.main-nav__list--user.user-list
+						li.user-list__item
+							a.user-list__login(href='.html')
+
+
+block content
+  main.page-main
+		.page-main__wrapper
+			h1.page-main__title
+				|
+
+			section

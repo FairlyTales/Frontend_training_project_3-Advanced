@@ -2,28 +2,23 @@
 @use 'global/mixin' as mixins;
 
 .inner-page {
-
 }
 
 .inner-page__wrapper {
 }
 
-
 @media (min-width: vars.$tablet-width) {
   .inner-page {
-   
   }
 
   .inner-page__wrapper {
-   
   }
 
-@media (min-width: vars.$desktop-width) {
-  .inner-page {
-   
-  }
+  @media (min-width: vars.$desktop-width) {
+    .inner-page {
+    }
 
-  .inner-page__wrapper {
-    
+    .inner-page__wrapper {
+    }
   }
 }

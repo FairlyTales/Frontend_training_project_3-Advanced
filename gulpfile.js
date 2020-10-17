@@ -277,9 +277,8 @@ function createSvgSprite() {
               sprite: '../sprite.svg',
               render: {
                 scss: {
-                  dest: '../../../../source/sass/global/_sprite.scss',
-                  template:
-                    source_folder + '/sass/templates/_sprite_template.scss',
+                  dest: `../../../../${source_folder}/sass/global/_sprite.scss`,
+                  template: `${source_folder}/sass/templates/_sprite_template.scss`,
                 },
               },
             },
@@ -341,5 +340,5 @@ let fonts2Woffs = gulp.parallel(fontsToWOFF, fontsToWOFF2);
 exports.compile = compileProject;
 exports.img = imgOptim;
 exports.sprite = sprite; //* carefull with it, this task overrides _sprite.scss
-exports.font = fonts2Woffs;
+exports.fonts = fonts2Woffs;
 exports.default = watchProject;

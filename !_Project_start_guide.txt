@@ -1,7 +1,0 @@
-1) Provide package.json with name and description
-2) Write a readme.md
-3) run npm i
-4) Provide layout_default.pug with lang and fonts
-5) Provide sass/global/_scaffolding.scss with font params
-6) git init, GitHub repo, etc.
-7) Start working

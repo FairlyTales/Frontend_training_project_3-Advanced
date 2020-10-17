@@ -1,34 +1,115 @@
 extends templates/layout_default
 
 block vars
-  - var page_id_for_js = "js-";
-  - var page_title = "";
-  - var page_decription = "";
-  - var page_keywords = "";
+  - var page_id_for_js = "js-index";
+  - var page_title = "Cat Energy";
+  - var page_decription = "Cat Enegry - функциональное питание для котов. Занялся собой? Займись котом!";
+  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов";
 
 block header
   header.page-header
-		.page-header__wrapper
-
-			nav.main-nav
-				.main-nav__wrapper
-					ul.main-nav__list.main-nav__list--site.site-list
-						li.site-list__item.site-list__item--current-page
-							a.site-list__link Главная
-
-						li.site-list__item
-							a.site-list__link(href='.html') 
-
-
-					ul.main-nav__list.main-nav__list--user.user-list
-						li.user-list__item
-							a.user-list__login(href='.html')
-								
+    .page-header__wrapper
+      picture.page-header__logo--picture
+        source(
+          media='(min-width: 1200px)',
+          srcset='/img/content_svg/logo_desktop.svg'
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset='/img/content_svg/logo_tablet.svg'
+        )
+        img.page-header__logo(
+          src='/img/content_svg/logo_mobile_text.svg',
+          width='101',
+          height='18',
+          alt='Логотип Cat Energy'
+        )
+      button.main-nav__toggle(type='button')
+        span.visually-hidden Открыть меню
+      nav.main-nav
+        .main-nav__wrapper
+          ul.main-nav__list.main-nav__list--site.site-list
+            li.site-list__item.site-list__item--current-page
+              a.site-list__link Главная
+            li.site-list__item
+              a.site-list__link(href='catalog.html') Каталог продукции
+            li.site-list__item
+              a.site-list__link(href='form.html') Подбор программы
 
 block content
   main.page-main
-		.page-main__wrapper
-			h1.page-main__title
-				| 
-				
-			section
+    .page-main__wrapper
+      h1.page-main__title
+        | Функциональное питание для котов
+      p.page-header__page-title--additional Занялся собой? Займись котом!
+
+      a.page-header__link-to-form(href='form.html') Подобрать программу
+
+      section.page-main__services.services
+        .services__wrapper
+          h2.visually-hidden Услуги
+          ul.services__list
+            li.services__item
+              h3.services__title Похудение
+              p.services__text
+                | Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.
+              a.services__link(href='#') Каталог Slim
+            li.services__item
+              h3.services__title Набор массы
+              p.services__text
+                | Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет вашему коту нарастить необходимые мышцы!
+              a.services__link(href='#') Каталог Pro
+
+      section.page-main__advantages.advantages
+        .advantages__wrapper
+          h2.advantages__title Как это работает
+          ul.advantages__list
+            li.advantages__item
+              p.advantages__text
+                | Функциональное питание содержит только полезные питательные вещества.
+            li.advantages__item
+              p.advantages__text
+                | Выпускается в виде порошка, который нужно лишь залить кипятком и готово.
+            li.advantages__item
+              p.advantages__text
+                | Замените один-два приёма обычной еды на наше функциональное питание.
+            li.advantages__item
+              p.advantages__text
+                | Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
+
+      section.page-main__before-after.before-after
+        .before-after__wrapper
+          h2.before-after__title Живой пример
+          p.before-after__text
+          | Борис сбросил 5кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+          ul.before-after__stats-list
+            li.before-after__main-text 5 Кг
+              p.before-after__secondary-text снижение веса
+            li.before-after__main-text 60 Дней
+              p.before-after__secondary-text затрачено времени
+          p.before-after__cost Затраты на питание: 15 000 Руб.
+
+        //- I'll start doing it without JS and when page is done I'll try to make this slider
+        picture.page-header__logo--picture
+          source(
+            media='(min-width: 768px)',
+            srcset='/img/content_img/before_desktop_and_tablet.png'
+          )
+          img.page-header__logo(
+            src='/img/content_img/before_mobile.jpg',
+            width='311',
+            height='232',
+            alt='Фотография кота до начала использования функционального питания Cat Energy Slim'
+          )
+          form.page-header__form
+            label.page-header__label(for='cat_before') Было
+            input#cat_before.page-header__range-input.visually-hidden-not-focusable(
+              type='radio',
+              name='cat_comparisson',
+              checked
+            )
+            label.page-header__label(for='cat_after') Стало
+            input#cat_after.page-header__range-input.visually-hidden-not-focusable(
+              type='radio',
+              name='cat_comparisson'
+            )
