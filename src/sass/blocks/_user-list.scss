@@ -1,0 +1,18 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
+.user-list {
+  @include mixins.reset-list;
+}
+
+.user-list__item {
+  
+}
+
+@media (min-width: vars.$tablet-width) {
+  
+}
+
+@media (min-width: vars.$desktop-width) {
+  
+}

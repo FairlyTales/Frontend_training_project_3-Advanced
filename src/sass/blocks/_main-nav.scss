@@ -1,0 +1,26 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
+.main-nav {
+
+}
+
+.main-nav__wrapper {
+}
+
+.main-nav__list {
+}
+
+.main-nav__list--site {
+}
+
+.main-nav__list--user {
+}
+
+@media (min-width: vars.$tablet-width) {
+
+}
+
+@media (min-width: vars.$desktop-width) {
+  
+}

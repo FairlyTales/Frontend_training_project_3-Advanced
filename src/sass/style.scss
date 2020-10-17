@@ -1,0 +1,29 @@
+//* global/basic stylesheets
+@use 'global/normalize';
+@use 'global/variables';
+@use 'global/mixin';
+@use 'global/sprite';
+@use 'global/scaffolding';
+
+
+//* base styles for buttons, sliders, etc.
+@use 'blocks/button';
+
+
+//* header blocks
+@use 'blocks/page-header';
+@use 'blocks/main-nav';
+@use 'blocks/site-list';
+@use 'blocks/user-list';
+
+
+//* styles for inner pages
+@use 'blocks/inner-page';
+
+
+//* page content blocks
+// @use 'blocks/';
+
+
+//* footer blocks
+@use 'blocks/page-footer';

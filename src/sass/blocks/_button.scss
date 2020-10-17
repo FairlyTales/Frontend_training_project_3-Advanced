@@ -1,0 +1,16 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
+.button {
+
+
+
+
+  &:focus,
+  &:hover {
+   
+  }
+  &:active {
+    
+  }
+}
