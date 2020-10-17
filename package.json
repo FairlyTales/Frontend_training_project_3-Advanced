@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "Training_project_3-cat_energy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Training project number 3.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
