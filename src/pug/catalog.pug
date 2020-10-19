@@ -1,0 +1,60 @@
+extends templates/layout_default
+
+block vars
+  - var page_id_for_js = "js-catalog";
+  - var page_title = "Каталог продукции";
+  - var page_decription = "Cat Enegry - функциональное питание для котов. Каталог продукции";
+  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов, каталог продукциия";
+
+block header
+  header.page-header
+    .page-header__wrapper
+      picture.page-header__logo--picture
+        source(
+          media='(min-width: 1200px)',
+          srcset='/img/content_svg/logo_desktop.svg'
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset='/img/content_svg/logo_tablet.svg'
+        )
+        img.page-header__logo(
+          src='/img/content_svg/logo_mobile_text.svg',
+          width='101',
+          height='18',
+          alt='Логотип Cat Energy'
+        )
+      button.main-nav__toggle(type='button')
+        span.visually-hidden Открыть меню
+      nav.main-nav
+        .main-nav__wrapper
+          ul.main-nav__list.main-nav__list--site.site-list
+            li.site-list__item.site-list__item--current-page
+              a.site-list__link(href='index.html') Главная
+            li.site-list__item.site-list__item--current-page
+              a.site-list__link Каталог продукции
+            li.site-list__item
+              a.site-list__link(href='form.html') Подбор программы
+
+block content
+  main.page-main
+    .page-main__wrapper
+      h1.page-main__title
+        | Каталог продукции
+
+      section.catalog
+        h2.visually-hidden Список продукции
+        ul.catalog__list
+          +catalogItem(1, 'Pro 500 г', 500, 'Курица', 700)
+          +catalogItem(2, 'Pro 1000 г', 1000, 'Курица', 1000)
+          +catalogItem(3, 'Pro 500 г', 500, 'Рыба', 700)
+          +catalogItem(4, 'Pro 1000 г', 1000, 'Рыба', 1000)
+          +catalogItem(5, 'Slim 500 г', 500, 'Гречка', 400)
+          +catalogItem(6, 'Slim 1000 г', 1000, 'Гречка', 700)
+          +catalogItem(7, 'Slim 500 г', 500, 'Рис', 500)
+
+        a.catalog__expand(href='#')
+          b.catalog__expand-heading Показать ещё 100500 товаров
+          p.catalog__expand-text На самом деле вкусов гораздо больше!
+          button.button.catalog__btn-expand
+            | Показать все

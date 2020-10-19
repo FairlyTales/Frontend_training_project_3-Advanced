@@ -15,22 +15,15 @@ html(lang='ru')
       as='font',
       crossorigin='anonymous'
     )
-    link(
-      rel='preload',
-      href='/fonts/Oswald-Medium.woff2',
-      as='font',
-      crossorigin='anonymous'
-    )
-    link(rel='preload', href="./js/script.min.js", as='script')
+    link(rel='preload', href='./js/script.min.js', as='script')
     link(rel='stylesheet', href='/css/style.min.css')
     title= page_title
 
   body
-
     block header
 
     block content
 
     include page_footer
 
-    script(src="./js/script.min.js")
+    script(src='./js/script.min.js')

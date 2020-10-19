@@ -6,8 +6,8 @@
 {{#shapes}}
 .sprite__{{base}} {
   // my code
-	width:({{width.inner}});
-  height:({{height.inner}});
+	width:({{width.inner}}px);
+  height:({{height.inner}}px);
 
   // original code, dunno why they are doing this, decided to use simpler code
   // font-size:({{height.inner}}/10)*1rem;
