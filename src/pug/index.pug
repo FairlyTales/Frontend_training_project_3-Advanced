@@ -1,40 +1,13 @@
 extends templates/layout_default
 
 block vars
-  - var page_id_for_js = "js-index";
+  - var js_page_id = "indexPage";
   - var page_title = "Cat Energy";
   - var page_decription = "Cat Enegry - функциональное питание для котов. Занялся собой? Займись котом!";
   - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов";
 
 block header
-  header.page-header
-    .page-header__wrapper
-      picture.page-header__logo--picture
-        source(
-          media='(min-width: 1200px)',
-          srcset='/img/content_svg/logo_desktop.svg'
-        )
-        source(
-          media='(min-width: 768px)',
-          srcset='/img/content_svg/logo_tablet.svg'
-        )
-        img.page-header__logo(
-          src='/img/content_svg/logo_mobile_text.svg',
-          width='101',
-          height='18',
-          alt='Логотип Cat Energy'
-        )
-      button.main-nav__toggle(type='button')
-        span.visually-hidden Открыть меню
-      nav.main-nav
-        .main-nav__wrapper
-          ul.main-nav__list.main-nav__list--site.site-list
-            li.site-list__item.site-list__item--current-page
-              a.site-list__link Главная
-            li.site-list__item
-              a.site-list__link(href='catalog.html') Каталог продукции
-            li.site-list__item
-              a.site-list__link(href='form.html') Подбор программы
+  +pageHeader(js_page_id)
 
 block content
   main.page-main

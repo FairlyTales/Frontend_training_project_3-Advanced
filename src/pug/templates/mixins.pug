@@ -1,12 +1,58 @@
-//- mixin for using SVG's from SVG-sprite
-//- to use this mixin in your .pug's insert next line with correct params:
-//- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
+//- add page header
+mixin pageHeader(pageId)
+  header.page-header
+    .page-header__wrapper
+      picture.page-header__logo--picture
+        source(
+          media='(min-width: 1200px)',
+          srcset='/img/content_svg/logo_desktop.svg'
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset='/img/content_svg/logo_tablet.svg'
+        )
+        img.page-header__logo(
+          src='/img/content_svg/logo_mobile_text.svg',
+          width='101',
+          height='18',
+          alt='Логотип Cat Energy'
+        )
+      button.main-nav__toggle(type='button')
+        span.visually-hidden Открыть меню
+      nav.page-header__main-nav.main-nav
+        .main-nav__wrapper
+          ul.main-nav__list
+          if pageId === 'indexPage'
+            li.main-nav__item.main-nav__item--current-page
+              a.main-nav__link Главная
+          else
+            li.main-nav__item.main-nav__item
+              a.main-nav__link(href='index.html') Главная
+
+          if pageId === 'catalogPage'
+            li.main-nav__item.main-nav__item--current-page
+              a.main-nav__link Каталог продукции
+          else
+            li.main-nav__item
+              a.main-nav__link(href='catalog.html') Каталог продукции
+
+          if pageId === 'formPage'
+            li.main-nav__item.main-nav__item--current-page
+              a.main-nav__link Подбор программы
+          else
+            li.main-nav__item
+              a.main-nav__link(href='form.html') Подбор программы
+//- +pageHeader(js_page_id)
+
+//- to include SVG's from SVG-sprite
 mixin svgSpriteIcon(name, width, height, BEMclass, title)
   svg(class="sprite sprite__" + name + " " + BEMclass, width=width, height=height)
     title= title
     use(href="img/sprite/sprite.svg#" + name)
+//- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
 
-mixin catalogItem(imgNumber, Name, volume, taste, price)
+//- create new item in catalog__list
+mixin catalogItem(imgNumber, name, volume, taste, price)
   li.catalog__item
     picture
       source(
@@ -37,7 +83,7 @@ mixin catalogItem(imgNumber, Name, volume, taste, price)
         height='144',
         alt='Изображение продукта'
       )
-    h3.catalog__item-name= `Cat Energy ${Name}`
+    h3.catalog__item-name= `Cat Energy ${name}`
     table.catalog__item-table
       tr
         td Объём
@@ -50,7 +96,9 @@ mixin catalogItem(imgNumber, Name, volume, taste, price)
         td= `${price} Р.`
     button.button.catalog__button.catalog__button--order
       | Заказать
+//- +catalogItem(imgNumber, 'Name', volume, 'taste', price)
 
+//- create new item in additional__list
 mixin additionalItem(name, volume, price)
   li.additional__item
     h3.additional__item-name= name
@@ -60,3 +108,4 @@ mixin additionalItem(name, volume, price)
         td= `${price} Р.`
     button.button.additional__button
       | Заказать
+//- +additionalItem('name', 'volume', price)
