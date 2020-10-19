@@ -6,7 +6,7 @@ mixin svgSpriteIcon(name, width, height, BEMclass, title)
     title= title
     use(href="img/sprite/sprite.svg#" + name)
 
-mixin catalogItem(imgNumber, itemName, volume, taste, price)
+mixin catalogItem(imgNumber, Name, volume, taste, price)
   li.catalog__item
     picture
       source(
@@ -37,7 +37,7 @@ mixin catalogItem(imgNumber, itemName, volume, taste, price)
         height='144',
         alt='Изображение продукта'
       )
-    h3.catalog__item-name= `Cat Energy ${itemName}`
+    h3.catalog__item-name= `Cat Energy ${Name}`
     table.catalog__item-table
       tr
         td Объём
@@ -49,4 +49,14 @@ mixin catalogItem(imgNumber, itemName, volume, taste, price)
         td Цена
         td= `${price} Р.`
     button.button.catalog__button.catalog__button--order
+      | Заказать
+
+mixin additionalItem(name, volume, price)
+  li.additional__item
+    h3.additional__item-name= name
+    table.additional__item-table
+      tr
+        td= volume
+        td= `${price} Р.`
+    button.button.additional__button
       | Заказать

@@ -4,7 +4,7 @@ block vars
   - var page_id_for_js = "js-catalog";
   - var page_title = "Каталог продукции";
   - var page_decription = "Cat Enegry - функциональное питание для котов. Каталог продукции";
-  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов, каталог продукциия";
+  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов, каталог продукции";
 
 block header
   header.page-header
@@ -58,3 +58,15 @@ block content
           p.catalog__expand-text На самом деле вкусов гораздо больше!
           button.button.catalog__btn-expand
             | Показать все
+
+      section.additional
+        h2.additional__title
+          | Дополнительные товары
+        ul.addtitonal__list
+          +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 200)
+          +additionalItem('Питьевая вода', '5 литров', 50)
+          +additionalItem('Молоко', '1 литр', 100)
+          +additionalItem('Витамины', '1 упаковка (30 г)', 300)
+        .addtitonal__advert
+          p.addtitonal__advert-text
+            | Закажите всё и получите чехол для кота в подарок!
