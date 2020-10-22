@@ -1,7 +1,7 @@
 extends templates/layout_default
 
 block vars
-  - var js_page_id = "indexPage";
+  - var js_page_id = "js-indexPage";
   - var page_title = "Cat Energy";
   - var page_decription = "Cat Enegry - функциональное питание для котов. Занялся собой? Займись котом!";
   - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов";
@@ -12,11 +12,10 @@ block header
 block content
   main.page-main
     .page-main__wrapper
-      h1.page-main__title
+      h1.page-main__title.page-main__title--index-page
         | Функциональное питание для котов
-      p.page-header__page-title--additional Занялся собой? Займись котом!
-
-      a.page-header__link-to-form(href='form.html') Подобрать программу
+      p.page-main__title-text Занялся собой? Займись котом!
+      a.page-main__link-to-form(href='form.html') Подобрать программу
 
       section.page-main__services.services
         .services__wrapper

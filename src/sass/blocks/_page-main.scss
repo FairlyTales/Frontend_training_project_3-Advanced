@@ -1,0 +1,36 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
+.page-main {
+}
+
+.page-main__wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    clamp(300px, 90%, 530px)
+    1fr;
+
+  // place all elements inside this wrapper in the second column
+  & > * {
+    grid-column: 2;
+  }
+}
+
+.page-main__title {
+}
+
+.page-main__link-to-form {
+}
+
+@media (min-width: vars.$tablet-width) {
+  .page-main__wrapper {
+    // grid-template-columns:
+    //   1fr
+    //   min(708px, 100%)
+    //   1fr;
+  }
+}
+
+@media (min-width: vars.$desktop-width) {
+}

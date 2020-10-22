@@ -1,57 +1,68 @@
 //- add page header
+//- +pageHeader(js_page_id)
 mixin pageHeader(pageId)
-  header.page-header
+  header.page-header(id=pageId)
     .page-header__wrapper
-      picture.page-header__logo--picture
-        source(
-          media='(min-width: 1200px)',
-          srcset='/img/content_svg/logo_desktop.svg'
+      a.page-header__logo-link-mobile-only(href='index.html')
+        img.page-header__logo-mobile-only(
+          src='/img/content_svg/logo_mobile.svg',
+          width='33',
+          height='38',
+          alt='Малый логотип Cat Energy'
         )
-        source(
-          media='(min-width: 768px)',
-          srcset='/img/content_svg/logo_tablet.svg'
-        )
-        img.page-header__logo(
-          src='/img/content_svg/logo_mobile_text.svg',
-          width='101',
-          height='18',
-          alt='Логотип Cat Energy'
-        )
-      button.main-nav__toggle(type='button')
+      a.page-header__logo-link(href='index.html')
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset='/img/content_svg/logo_desktop.svg'
+          )
+          source(
+            media='(min-width: 768px)',
+            srcset='/img/content_svg/logo_tablet.svg'
+          )
+          img.page-header__logo(
+            src='/img/content_svg/logo_mobile_text.svg',
+            width='101',
+            height='18',
+            alt='Логотип Cat Energy'
+          )
+      button.page-header__nav-toggle(type='button')
         span.visually-hidden Открыть меню
-      nav.page-header__main-nav.main-nav
+        +svgSpriteIcon('hamburger_open', 24, 18, 'page-header__hamburger', 'иконка открытия меню')
+
+      nav.page-header__main-nav.main-nav.main-nav--closed.main-nav--no-js
         .main-nav__wrapper
           ul.main-nav__list
-          if pageId === 'indexPage'
-            li.main-nav__item.main-nav__item--current-page
-              a.main-nav__link Главная
-          else
-            li.main-nav__item.main-nav__item
-              a.main-nav__link(href='index.html') Главная
+            if pageId === 'js-indexPage'
+              li.main-nav__item.main-nav__item--index-page.main-nav__item--current-page
+                a.main-nav__link Главная
+            else
+              li.main-nav__item.main-nav__item--index-page
+                a.main-nav__link(href='index.html') Главная
 
-          if pageId === 'catalogPage'
-            li.main-nav__item.main-nav__item--current-page
-              a.main-nav__link Каталог продукции
-          else
-            li.main-nav__item
-              a.main-nav__link(href='catalog.html') Каталог продукции
+            if pageId === 'js-catalogPage'
+              li.main-nav__item.main-nav__item--catalog-page.main-nav__item--current-page
+                a.main-nav__link Каталог продукции
+            else
+              li.main-nav__item.main-nav__item--catalog-page
+                a.main-nav__link(href='catalog.html') Каталог продукции
 
-          if pageId === 'formPage'
-            li.main-nav__item.main-nav__item--current-page
-              a.main-nav__link Подбор программы
-          else
-            li.main-nav__item
-              a.main-nav__link(href='form.html') Подбор программы
-//- +pageHeader(js_page_id)
+            if pageId === 'js-formPage'
+              li.main-nav__item.main-nav__item--form-page.main-nav__item--current-page
+                a.main-nav__link Подбор программы
+            else
+              li.main-nav__item.main-nav__item--form-page
+                a.main-nav__link(href='form.html') Подбор программы
 
 //- to include SVG's from SVG-sprite
+//- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
 mixin svgSpriteIcon(name, width, height, BEMclass, title)
   svg(class="sprite sprite__" + name + " " + BEMclass, width=width, height=height)
     title= title
     use(href="img/sprite/sprite.svg#" + name)
-//- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
 
 //- create new item in catalog__list
+//- +catalogItem(imgNumber, 'Name', volume, 'taste', price)
 mixin catalogItem(imgNumber, name, volume, taste, price)
   li.catalog__item
     picture
@@ -96,9 +107,9 @@ mixin catalogItem(imgNumber, name, volume, taste, price)
         td= `${price} Р.`
     button.button.catalog__button.catalog__button--order
       | Заказать
-//- +catalogItem(imgNumber, 'Name', volume, 'taste', price)
 
 //- create new item in additional__list
+//- +additionalItem('name', 'volume', price)
 mixin additionalItem(name, volume, price)
   li.additional__item
     h3.additional__item-name= name
@@ -108,4 +119,3 @@ mixin additionalItem(name, volume, price)
         td= `${price} Р.`
     button.button.additional__button
       | Заказать
-//- +additionalItem('name', 'volume', price)
