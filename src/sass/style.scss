@@ -12,11 +12,13 @@
 @use 'blocks/page-main';
 @use 'blocks/page-header';
 @use 'blocks/main-nav';
-@use 'blocks/advertisement';
-@use 'blocks/comparison';
 
 //* page content blocks
 // @use 'blocks/';
+@use 'blocks/main-info';
+@use 'blocks/services';
+@use 'blocks/advantages';
+@use 'blocks/comparison';
 
 //* footer blocks
 @use 'blocks/page-footer';

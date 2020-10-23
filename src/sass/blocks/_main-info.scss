@@ -1,0 +1,133 @@
+@use 'global/variables' as vars;
+@use 'global/mixin' as mixins;
+
+.main-info {
+  color: #fff;
+}
+
+.main-info__wrapper {
+  position: relative;
+}
+
+.main-info__text-container {
+  min-height: 305px;
+  background-color: #63a73a;
+  background-image: url('../img/background_img/index_background_mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: 320px 305px;
+}
+
+.main-info__title {
+  padding: 0 10%;
+  padding-top: 28px;
+  margin: 0;
+
+  font-size: 2.25rem;
+  font-weight: inherit;
+  line-height: 1em;
+  text-align: center;
+}
+
+.main-info__title-text {
+  padding: 0 30px;
+  padding-top: 20px;
+  margin: 0;
+
+  font-size: 1.0625rem;
+  line-height: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.main-info__image-link {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+
+  width: 280px;
+  height: 270px;
+
+  transform: translate(-50%, -50%);
+}
+
+.main-info__image {
+  width: 280px;
+  height: 270px;
+}
+
+.main-info__button {
+  margin-top: 135px;
+}
+
+@media (min-width: vars.$tablet-width) {
+  .main-info {
+    color: #000;
+  }
+
+  .main-info__text-container {
+    min-height: 0;
+    background-color: transparent;
+    background-image: none;
+  }
+
+  .main-info__title {
+    padding: 0;
+    padding-top: 30px;
+
+    font-size: 3.75rem;
+    text-align: left;
+  }
+
+  .main-info__title-text {
+    padding: 0;
+    padding-top: 44px;
+
+    font-size: 1.3rem;
+    text-align: left;
+  }
+
+  .main-info__image-link {
+    top: 545px;
+    z-index: -1;
+
+    width: 709px;
+    height: 609px;
+  }
+
+  .main-info__image {
+    width: 709px;
+    height: 609px;
+  }
+
+  .main-info__button {
+    max-width: 242px;
+    margin: 0;
+    margin-top: 48px;
+
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: vars.$desktop-width) {
+  .main-info__wrapper {
+    background-color: #63a73a;
+    background-image: url('../img/background_img/index_background_mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: 320px 305px;
+  }
+
+  .main-info__image-link {
+    top: 545px;
+    z-index: -1;
+
+    width: 552px;
+    height: 499px;
+  }
+
+  .main-info__image {
+    width: 552px;
+    height: 499px;
+  }
+}

@@ -12,11 +12,43 @@ block header
 block content
   main.page-main
     .page-main__wrapper
-      section.page-main__advertisement
-        h1.page-main__title.page-main__title--index-page
-          | Функциональное питание для котов
-        p.page-main__title-text Занялся собой? Займись котом!
-        a.page-main__link-to-form(href='form.html') Подобрать программу
+      section.page-main__main-info.main-info
+        .main-info__wrapper
+          .main-info__text-container(role='presentation')
+            h1.main-info__title
+              | Функциональное питание для котов
+            p.main-info__title-text Занялся собой? Займись котом!
+          a.main-info__image-link(href='#')
+            picture
+              source(
+                media='(min-width: 1440px)',
+                srcset='/img/content_img/index_can_desktop.webp',
+                type='image/webp'
+              )
+              source(
+                media='(min-width: 1440px)',
+                srcset='/img/content_img/index_can_desktop.png'
+              )
+              source(
+                media='(min-width: 768px)',
+                srcset='/img/content_img/index_can_tablet.webp',
+                type='image/webp'
+              )
+              source(
+                media='(min-width: 768px)',
+                srcset='/img/content_img/index_can_tablet.png'
+              )
+              source(
+                srcset='/img/content_img/index_can_mobile.webp',
+                type='image/webp'
+              )
+              img.main-info__image(
+                src='/img/content_img/index_can_mobile.png',
+                width='280',
+                height='270',
+                alt='Изображение упаковки Cat Energy Pro 500 грамм'
+              )
+          a.button.main-info__button(href='#') Подобрать программу
 
       section.page-main__services.services
         .services__wrapper
@@ -56,42 +88,42 @@ block content
           p.comparison__text
           | Борис сбросил 5кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
           ul.comparison__stats-list
-            li.comparison__main-text 5 Кг
-              p.comparison__secondary-text снижение веса
-            li.comparison__main-text 60 Дней
-              p.comparison__secondary-text затрачено времени
+            li.comparison__stats-item 5 Кг
+              p.comparison__stats-text снижение веса
+            li.comparison__stats-item 60 Дней
+              p.comparison__stats-text затрачено времени
           p.comparison__cost Затраты на питание: 15 000 Руб.
 
-        //- I'll start doing it without JS and when page is done I'll try to make this slider
-        picture.page-header__logo--picture
-          source(
-            media='(min-width: 768px)',
-            srcset='/img/content_img/before_desktop_and_tablet.webp',
-            type='image/webp'
-          )
-          source(
-            media='(min-width: 768px)',
-            srcset='/img/content_img/before_desktop_and_tablet.png'
-          )
-          source(
-            srcset='/img/content_img/before_mobile.webp',
-            type='image/webp'
-          )
-          img.page-header__logo(
-            src='/img/content_img/before_mobile.jpg',
-            width='311',
-            height='232',
-            alt='Фотография кота до начала использования функционального питания Cat Energy Slim'
-          )
-          form.page-header__form
-            label.page-header__label(for='cat_before') Было
-            input#cat_before.page-header__range-input.visually-hidden-not-focusable(
-              type='radio',
-              name='cat_comparisson',
-              checked
+          //- I'll start with a simple radio switch and will change it to range slider later, after finishing most of the project
+          picture.page-header__logo--picture
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_img/before_desktop_and_tablet.webp',
+              type='image/webp'
             )
-            label.page-header__label(for='cat_after') Стало
-            input#cat_after.page-header__range-input.visually-hidden-not-focusable(
-              type='radio',
-              name='cat_comparisson'
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_img/before_desktop_and_tablet.png'
             )
+            source(
+              srcset='/img/content_img/before_mobile.webp',
+              type='image/webp'
+            )
+            img.page-header__logo(
+              src='/img/content_img/before_mobile.jpg',
+              width='311',
+              height='232',
+              alt='Фотография кота до начала использования функционального питания Cat Energy Slim'
+            )
+            form.page-header__form
+              label.page-header__label(for='cat_before') Было
+              input#cat_before.page-header__range-input.visually-hidden-not-focusable(
+                type='radio',
+                name='cat_comparisson',
+                checked
+              )
+              label.page-header__label(for='cat_after') Стало
+              input#cat_after.page-header__range-input.visually-hidden-not-focusable(
+                type='radio',
+                name='cat_comparisson'
+              )

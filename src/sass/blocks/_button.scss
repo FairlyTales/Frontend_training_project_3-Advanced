@@ -2,6 +2,18 @@
 @use 'global/mixin' as mixins;
 
 .button {
+  display: block;
+  padding: 0.8em 1em;
+  margin: 0 20px;
+
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: vars.$basic-green;
+
   &:focus,
   &:hover {
   }

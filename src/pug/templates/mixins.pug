@@ -13,7 +13,7 @@ mixin pageHeader(pageId)
       a.page-header__logo-link(href='index.html')
         picture
           source(
-            media='(min-width: 1200px)',
+            media='(min-width: 1440px)',
             srcset='/img/content_svg/logo_desktop.svg'
           )
           source(
@@ -54,7 +54,7 @@ mixin pageHeader(pageId)
               li.main-nav__item.main-nav__item--form-page
                 a.main-nav__link(href='form.html') Подбор программы
 
-//- to include SVG's from SVG-sprite
+//- include SVG's from SVG-sprite
 //- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
 mixin svgSpriteIcon(name, width, height, BEMclass, title)
   svg(class="sprite sprite__" + name + " " + BEMclass, width=width, height=height)

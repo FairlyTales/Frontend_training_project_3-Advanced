@@ -121,6 +121,7 @@ function browserSync() {
     browser: 'C:\\Program Files\\Firefox Developer Edition\\firefox.exe',
     port: 3000,
     notify: false,
+    injectChanges: true,
   });
 }
 
