@@ -14,6 +14,8 @@
 
   background-color: vars.$basic-green;
 
+  transition: all 0.05s linear 0s;
+
   &:focus,
   &:hover {
     background-color: vars.$dark-green;

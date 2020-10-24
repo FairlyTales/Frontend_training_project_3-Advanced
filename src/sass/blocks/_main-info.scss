@@ -31,11 +31,12 @@
 
 .main-info__title-text {
   padding: 0 30px;
-  padding-top: 20px;
+  padding-top: 23px;
   margin: 0;
 
-  font-size: 1.0625rem;
+  font-size: 0.875rem;
   line-height: 1em;
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   text-transform: uppercase;
 }
@@ -57,7 +58,11 @@
 }
 
 .main-info__button {
+  padding: 0.9em 1em;
   margin-top: 135px;
+
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (min-width: vars.$tablet-width) {
@@ -102,10 +107,12 @@
 
   .main-info__button {
     max-width: 242px;
+    padding: 0.8em 1em;
     margin: 0;
     margin-top: 48px;
 
     font-size: 1.25rem;
+    color: #fff;
   }
 }
 
