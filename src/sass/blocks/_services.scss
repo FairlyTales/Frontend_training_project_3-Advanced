@@ -1,7 +1,144 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
+.services__wrapper {
+  padding: 0 20px;
+}
+
+.services__list {
+  @include mixins.reset-list;
+}
+
+.services__item {
+  margin-bottom: 20px;
+
+  background-color: #f2f2f2;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.services__title {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 92px;
+  margin: 0;
+
+  font-size: 1.5rem;
+  line-height: 2.3125rem;
+  text-transform: uppercase;
+
+  // green background
+  &::before {
+    position: absolute;
+    top: 25px;
+    left: 23px;
+
+    width: 50px;
+    height: 50px;
+
+    content: '';
+    background-color: vars.$basic-green;
+    border-radius: 100%;
+  }
+
+  // cat image basic styles
+  &::after {
+    position: absolute;
+    content: '';
+    background-repeat: no-repeat;
+  }
+}
+
+// cat image
+.services__title--slim::after {
+  top: 22px;
+  left: 26px;
+
+  width: 43px;
+  height: 53px;
+
+  background-image: url('../img/background_svg/icon_cat_sitting.svg');
+  background-size: 42px 50px;
+  transform: scaleX(-1);
+}
+
+.services__title--mass::after {
+  top: 22px;
+  left: 12px;
+
+  width: 71px;
+  height: 45px;
+
+  background-image: url('../img/background_svg/icon_cat_walking.svg');
+  background-size: 70px 60px;
+}
+
+.services__text {
+  position: relative;
+  padding: 30px 20px;
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+
+  // gray underline
+  &::after {
+    position: absolute;
+    right: 20px;
+    bottom: 8px;
+    left: 20px;
+
+    height: 1px;
+
+    content: '';
+
+    background-color: #d9d9d9;
+  }
+}
+
+.services__link {
+  position: relative;
+  display: block;
+
+  padding-top: 10px;
+  padding-bottom: 23px;
+  padding-left: 20px;
+
+  font-size: 1rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    top: 13px;
+    left: 117px;
+
+    width: 24px;
+    height: 11px;
+    content: '';
+
+    background-image: url('../img/background_svg/arrow_short.svg');
+    background-repeat: no-repeat;
+  }
+
+  &:hover::after {
+    width: 33px;
+    background-image: url('../img/background_svg/arrow_long.svg');
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
 @media (min-width: vars.$tablet-width) {
+  .services__title {
+    font-size: 2.25rem;
+    line-height: 2.3125rem;
+  }
 }
 
 @media (min-width: vars.$desktop-width) {

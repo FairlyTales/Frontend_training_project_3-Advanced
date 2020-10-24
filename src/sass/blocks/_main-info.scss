@@ -70,6 +70,10 @@
     color: #000;
   }
 
+  .main-info__wrapper {
+    padding-left: 90px;
+  }
+
   .main-info__text-container {
     min-height: 0;
     background-color: transparent;
@@ -79,6 +83,7 @@
   .main-info__title {
     padding: 0;
     padding-top: 30px;
+    padding-right: 60px;
 
     font-size: 3.75rem;
     text-align: left;
@@ -89,6 +94,7 @@
     padding-top: 44px;
 
     font-size: 1.3rem;
+    color: #000;
     text-align: left;
   }
 
