@@ -19,7 +19,6 @@ function navMenuOpenClose() {
   const hamburgerIcon = document.querySelector('.page-header__hamburger > use');
 
   pageHeader.addEventListener('click', (evt) => {
-    console.log('header');
     if (navMenu.classList.contains('main-nav--closed')) {
       navMenu.classList.remove('main-nav--closed');
       navMenu.classList.add('main-nav--opened');
@@ -40,11 +39,11 @@ function navMenuOpenClose() {
 
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
-  const tabletWidth = window.matchMedia('(min-width: 768px)');
-  const desktopWidth = window.matchMedia('(min-width: 1200px)');
-  const currentPage = document.querySelector('.page-header');
-
   removeNoJsFallback();
+
+  const tabletWidth = window.matchMedia('(min-width: 768px)');
+  const desktopWidth = window.matchMedia('(min-width: 1400px)');
+  const currentPage = document.querySelector('.page-header');
 
   if (desktopWidth.matches) {
     switch (currentPage.id) {

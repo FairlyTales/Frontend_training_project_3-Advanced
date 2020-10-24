@@ -16,7 +16,9 @@
 
   &:focus,
   &:hover {
+    background-color: vars.$dark-green;
   }
   &:active {
+    color: rgba(255, 255, 255, 0.5);
   }
 }

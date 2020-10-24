@@ -118,7 +118,10 @@ function browserSync() {
     server: {
       baseDir: ['./' + build_folder + '/'],
     },
-    browser: 'C:\\Program Files\\Firefox Developer Edition\\firefox.exe',
+    browser: [
+      'C:\\Program Files\\Firefox Developer Edition\\firefox.exe',
+      'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
+    ],
     port: 3000,
     notify: false,
     injectChanges: true,

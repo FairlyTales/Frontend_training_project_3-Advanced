@@ -111,15 +111,36 @@
 
 @media (min-width: vars.$desktop-width) {
   .main-info__wrapper {
-    background-color: #63a73a;
-    background-image: url('../img/background_img/index_background_mobile.jpg');
-    background-repeat: no-repeat;
-    background-position: center 0;
-    background-size: 320px 305px;
+    background-color: none;
+    background-image: none;
+
+    // background image, with cat
+    &::after {
+      position: absolute;
+      top: -168px;
+      right: -119px;
+      z-index: -2;
+
+      width: 720px;
+      height: 696px;
+
+      content: '';
+
+      background-color: vars.$basic-green;
+      background-image: url('../img/background_img/index_background_desktop.jpg');
+    }
+  }
+
+  .main-info__text-container {
+    max-width: 560px;
+
+    padding-top: 25px;
+    padding-left: 70px;
   }
 
   .main-info__image-link {
-    top: 545px;
+    top: 220px;
+    left: 720px;
     z-index: -1;
 
     width: 552px;
@@ -129,5 +150,9 @@
   .main-info__image {
     width: 552px;
     height: 499px;
+  }
+
+  .main-info__button {
+    margin-left: 70px;
   }
 }

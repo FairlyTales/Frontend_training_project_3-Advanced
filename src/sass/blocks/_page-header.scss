@@ -4,7 +4,7 @@
 .page-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 3;
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -95,7 +95,8 @@
 
 @media (min-width: vars.$desktop-width) {
   .page-header {
-    position: initial;
+    position: relative;
+    background-color: transparent;
     border: none;
   }
 
