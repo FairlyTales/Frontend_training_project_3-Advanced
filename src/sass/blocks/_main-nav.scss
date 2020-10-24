@@ -1,6 +1,15 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
+@keyframes mobileNavBar {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .main-nav__list {
   @include mixins.reset-list;
 
@@ -52,6 +61,8 @@
 
     background-color: #fff;
 
+    transition: all 0.07s ease-out 0s;
+
     &--closed {
       // copy-paste from .visually-hidden
       position: absolute;
@@ -99,9 +110,9 @@
 @media (min-width: vars.$tablet-width) {
   .main-nav__list {
     display: flex;
-    padding-right: 2%;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-right: 2%;
 
     font-weight: normal;
     line-height: 1.4em;

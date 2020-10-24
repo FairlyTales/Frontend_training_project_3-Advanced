@@ -4,5 +4,5 @@
   "git.ignoreLimitWarning": true,
   "editor.wordWrap": "on",
   "breadcrumbs.enabled": true,
-  "bracketPairColorizer.forceUniqueOpeningColor": false
-}
+  "bracketPairColorizer.forceUniqueOpeningColor": false,
+  "terminal.integrated.fontSize": 23
