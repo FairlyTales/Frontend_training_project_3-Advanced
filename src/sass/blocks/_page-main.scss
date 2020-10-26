@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns:
     1fr
-    clamp(320px, 90%, 530px)
+    clamp(320px, 100%, 680px)
     1fr;
 
   // place all elements inside this wrapper in the second column
@@ -30,7 +30,7 @@
   }
 
   .page-main__main-info {
-    margin-bottom: 470px;
+    margin-bottom: 505px;
   }
 }
 
@@ -38,7 +38,11 @@
   .page-main__wrapper {
     grid-template-columns:
       1fr
-      1200px
+      1215px
       1fr;
+  }
+
+  .page-main__main-info {
+    margin-bottom: 250px;
   }
 }
