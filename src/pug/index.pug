@@ -88,16 +88,26 @@ block content
         .comparison__wrapper
           h2.comparison__title Живой пример
           p.comparison__text
-          | Борис сбросил 5кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+            | Борис сбросил 5кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
           ul.comparison__stats-list
-            li.comparison__stats-item 5 Кг
-              p.comparison__stats-text снижение веса
-            li.comparison__stats-item 60 Дней
-              p.comparison__stats-text затрачено времени
+            li.comparison__stats-item
+              span.comparison__stats-big-text
+                | 5 Кг
+              span.comparison__stats-text
+                | снижение
+                br
+                | веса
+            li.comparison__stats-item
+              span.comparison__stats-big-text
+                | 60 Дней
+              span.comparison__stats-text
+                | затрачено
+                br
+                | времени
           p.comparison__cost Затраты на питание: 15 000 Руб.
 
           //- I'll start with a simple radio switch and will change it to range slider later, after finishing most of the project
-          picture.page-header__logo--picture
+          picture
             source(
               media='(min-width: 768px)',
               srcset='/img/content_img/before_desktop_and_tablet.webp',
@@ -111,21 +121,35 @@ block content
               srcset='/img/content_img/before_mobile.webp',
               type='image/webp'
             )
-            img.page-header__logo(
+            img.comparison__img.comparison__img--before(
               src='/img/content_img/before_mobile.jpg',
               width='311',
               height='232',
               alt='Фотография кота до начала использования функционального питания Cat Energy Slim'
             )
-            form.page-header__form
-              label.page-header__label(for='cat_before') Было
-              input#cat_before.page-header__range-input.visually-hidden-not-focusable(
-                type='radio',
-                name='cat_comparisson',
-                checked
-              )
-              label.page-header__label(for='cat_after') Стало
-              input#cat_after.page-header__range-input.visually-hidden-not-focusable(
-                type='radio',
-                name='cat_comparisson'
-              )
+          picture
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_img/after_desktop_and_tablet.webp',
+              type='image/webp'
+            )
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_img/after_desktop_and_tablet.png'
+            )
+            source(
+              srcset='/img/content_img/after_mobile.webp',
+              type='image/webp'
+            )
+            img.comparison__img.comparison__img--after.visually-hidden(
+              src='/img/content_img/after_mobile.jpg',
+              width='251',
+              height='240',
+              alt='Фотография кота после использования функционального питания Cat Energy Slim'
+            )
+
+          .comparison__controls
+            button.comparison__button.comparison__button--before.comparison__button-indicator-before
+              | Было
+            button.comparison__button.comparison__button--after
+              | Стало
