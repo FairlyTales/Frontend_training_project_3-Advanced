@@ -1,3 +1,6 @@
+# folder with PSD templates
+/!_PSD
+
 # compiled output
 /dist
 /tmp
