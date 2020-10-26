@@ -133,7 +133,7 @@
     &::after {
       position: absolute;
       top: -168px;
-      right: -119px;
+      right: -111px;
       z-index: -2;
 
       width: 720px;
@@ -153,8 +153,13 @@
     padding-left: 70px;
   }
 
+  .main-info__title-text {
+    padding-top: 42px;
+    font-size: 1.25rem;
+  }
+
   .main-info__image-link {
-    top: 220px;
+    top: 225px;
     left: 720px;
     z-index: -1;
 
@@ -168,6 +173,7 @@
   }
 
   .main-info__button {
-    margin-left: 70px;
+    margin-top: 52px;
+    margin-left: 68px;
   }
 }

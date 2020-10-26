@@ -213,7 +213,7 @@
     // arrow icon
     &::after {
       top: 31px;
-      left: calc(7.5% + 180px);
+      left: calc(7.5% + 160px);
     }
   }
 }
@@ -287,5 +287,11 @@
   .services__link {
     padding-top: 20px;
     padding-bottom: 20px;
+
+    // arrow icon
+    &::after {
+      top: 23px;
+      left: calc(7.5% + 150px);
+    }
   }
 }
