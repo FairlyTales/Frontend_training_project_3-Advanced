@@ -4,6 +4,7 @@
 .page-header {
   position: sticky;
   top: 0;
+  z-index: 3;
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -15,7 +16,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   min-height: 66px;
 
@@ -94,7 +95,8 @@
 
 @media (min-width: vars.$desktop-width) {
   .page-header {
-    position: initial;
+    position: relative;
+    background-color: transparent;
     border: none;
   }
 

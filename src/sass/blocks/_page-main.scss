@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns:
     1fr
-    clamp(300px, 90%, 530px)
+    clamp(320px, 100%, 680px)
     1fr;
 
   // place all elements inside this wrapper in the second column
@@ -17,20 +17,68 @@
   }
 }
 
-.page-main__title {
+.page-main__services {
+  margin-top: 22px;
 }
 
-.page-main__link-to-form {
+.page-main__comparison {
+  margin-top: 47px;
 }
 
 @media (min-width: vars.$tablet-width) {
   .page-main__wrapper {
-    // grid-template-columns:
-    //   1fr
-    //   min(708px, 100%)
-    //   1fr;
+    grid-template-columns:
+      1fr
+      clamp(708px, 80%, 1000px)
+      1fr;
+  }
+
+  .page-main__main-info {
+    margin-bottom: 505px;
+  }
+
+  .page-main__advantages {
+    position: relative;
+
+    // underline after the block
+    &::after {
+      position: absolute;
+      bottom: -105px;
+
+      width: 100%;
+      height: 1px;
+
+      content: '';
+
+      background-color: #e6e6e6;
+    }
+  }
+
+  .page-main__comparison {
+    margin-top: 130px;
   }
 }
 
 @media (min-width: vars.$desktop-width) {
+  .page-main__wrapper {
+    grid-template-columns:
+      1fr
+      1215px
+      1fr;
+  }
+
+  .page-main__main-info {
+    margin-bottom: 250px;
+  }
+
+  .page-main__advantages {
+    // hide underline after the block
+    &::after {
+      content: none;
+    }
+  }
+
+  .page-main__comparison {
+    margin-top: 104px;
+  }
 }

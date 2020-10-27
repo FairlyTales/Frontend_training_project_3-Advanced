@@ -19,7 +19,6 @@ function navMenuOpenClose() {
   const hamburgerIcon = document.querySelector('.page-header__hamburger > use');
 
   pageHeader.addEventListener('click', (evt) => {
-    console.log('header');
     if (navMenu.classList.contains('main-nav--closed')) {
       navMenu.classList.remove('main-nav--closed');
       navMenu.classList.add('main-nav--opened');
@@ -38,17 +37,59 @@ function navMenuOpenClose() {
   });
 }
 
+function imgCompareButtons() {
+  const btnBefore = document.querySelector('.comparison__button--before');
+  const btnAfter = document.querySelector('.comparison__button--after');
+  const imgBefore = document.querySelector('.comparison__img--before');
+  const imgAfter = document.querySelector('.comparison__img--after');
+  const images = document.querySelectorAll('.comparison__img');
+  const slider = document.querySelector('.comparison__slider-background');
+
+  function switchToImgAfter() {
+    imgBefore.classList.add('visually-hidden');
+    imgAfter.classList.remove('visually-hidden');
+    btnAfter.classList.add('comparison__button-indicator-after');
+    btnBefore.classList.remove('comparison__button-indicator-before');
+  }
+
+  function switchToImgBefore() {
+    imgBefore.classList.remove('visually-hidden');
+    imgAfter.classList.add('visually-hidden');
+    btnAfter.classList.remove('comparison__button-indicator-after');
+    btnBefore.classList.add('comparison__button-indicator-before');
+  }
+
+  btnBefore.addEventListener('click', switchToImgBefore);
+  btnAfter.addEventListener('click', switchToImgAfter);
+  images.forEach((image) =>
+    image.addEventListener('click', (evt) => {
+      if (btnBefore.classList.contains('comparison__button-indicator-before'))
+        switchToImgAfter();
+      else if (
+        btnAfter.classList.contains('comparison__button-indicator-after')
+      )
+        switchToImgBefore();
+    })
+  );
+  slider.addEventListener('click', (evt) => {
+    // switch images if the slider itself is clicked
+    if (evt.offsetX >= 42) switchToImgAfter();
+    else switchToImgBefore();
+  });
+}
+
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
-  const tabletWidth = window.matchMedia('(min-width: 768px)');
-  const desktopWidth = window.matchMedia('(min-width: 1200px)');
-  const currentPage = document.querySelector('.page-header');
-
   removeNoJsFallback();
+
+  const tabletWidth = window.matchMedia('(min-width: 768px)');
+  const desktopWidth = window.matchMedia('(min-width: 1400px)');
+  const currentPage = document.querySelector('.page-header');
 
   if (desktopWidth.matches) {
     switch (currentPage.id) {
       case 'js-indexPage':
+        imgCompareButtons();
         break;
       case 'js-catalogPage':
         break;
@@ -58,6 +99,7 @@ function checkDeviceWidth() {
   } else if (tabletWidth.matches) {
     switch (currentPage.id) {
       case 'js-indexPage':
+        imgCompareButtons();
         break;
       case 'js-catalogPage':
         break;
@@ -70,6 +112,7 @@ function checkDeviceWidth() {
 
     switch (currentPage.id) {
       case 'js-indexPage':
+        imgCompareButtons();
         break;
       case 'js-catalogPage':
         break;

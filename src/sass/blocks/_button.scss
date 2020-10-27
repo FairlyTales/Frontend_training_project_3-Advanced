@@ -2,9 +2,25 @@
 @use 'global/mixin' as mixins;
 
 .button {
+  display: block;
+  padding: 0.8em 1em;
+  margin: 0 20px;
+
+  font-size: 1.2rem;
+  line-height: 1em;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: vars.$basic-green;
+
+  transition: all 0.05s linear 0s;
+
   &:focus,
   &:hover {
+    background-color: vars.$dark-green;
   }
   &:active {
+    color: rgba(255, 255, 255, 0.5);
   }
 }

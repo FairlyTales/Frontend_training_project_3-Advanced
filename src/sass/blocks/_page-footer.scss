@@ -2,29 +2,29 @@
 @use 'global/mixin' as mixins;
 
 .page-footer {
-  
 }
 
 .page-footer__wrapper {
-  
+}
+
+.contacts__map-interactive {
+}
+
+.contacts__map-fallback-img {
 }
 
 @media (min-width: vars.$tablet-width) {
   .page-footer__wrapper {
-   
   }
 
   .page-footer__contacts {
-   
   }
 }
 
 @media (min-width: vars.$desktop-width) {
   .page-footer__wrapper {
-   
   }
 
   .page-footer__contacts {
-    
   }
 }

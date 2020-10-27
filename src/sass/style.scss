@@ -15,6 +15,10 @@
 
 //* page content blocks
 // @use 'blocks/';
+@use 'blocks/main-info';
+@use 'blocks/services';
+@use 'blocks/advantages';
+@use 'blocks/comparison';
 
 //* footer blocks
 @use 'blocks/page-footer';
