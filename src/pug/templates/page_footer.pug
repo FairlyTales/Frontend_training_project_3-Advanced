@@ -2,10 +2,11 @@ footer.page-footer
   .page-footer__wrapper
     section.page-footer__contacts.contacts
       .contacts__container
-        h2.contacts__title
-          | Приглашаем к сотрудничеству дилеров!
-        p.contacts__text
-          | Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
+        .contacts__text-container
+          h2.contacts__title
+            | Приглашаем к сотрудничеству дилеров!
+          p.contacts__text
+            | Ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
 
         .contacts__map-container
           iframe.contacts__map-interactive(
@@ -22,8 +23,22 @@ footer.page-footer
                 srcset='/img/content_img/map_desktop.jpg'
               )
               source(
+                media='(min-width: 1200px)',
+                srcset='/img/content_img/map_desktop.webp',
+                type='image/webp'
+              )
+              source(
                 media='(min-width: 768px)',
                 srcset='/img/content_img/map_tablet.jpg'
+              )
+              source(
+                media='(min-width: 768px)',
+                srcset='/img/content_img/map_tablet.webp',
+                type='image/webp'
+              )
+              source(
+                srcset='/img/content_img/map_mobile.webp',
+                type='image/webp'
               )
               img.contacts__map-fallback-img(
                 src='/img/content_img/map_mobile.jpg',

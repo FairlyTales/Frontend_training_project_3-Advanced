@@ -92,7 +92,7 @@ block content
         .comparison__wrapper
           .comparison__info-container
             p.comparison__text
-              | Борис сбросил 5кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+              | Борис сбросил 5 кг за 2 месяца, просто заменим свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
             ul.comparison__stats-list
               li.comparison__stats-item
                 span.comparison__stats-big-text
@@ -113,8 +113,8 @@ block content
               span.comparison__cost-price
                 | 15 000 Руб.
 
-          .comparison__range-compare-container
-            .comparison__img-container.comparison__img-container--before
+          .comparison__slider-container
+            .comparison__img-container
               picture
                 source(
                   media='(min-width: 768px)',
@@ -135,7 +135,6 @@ block content
                   height='232',
                   alt='Фотография кота до начала использования функционального питания Cat Energy Slim'
                 )
-            .comparison__img-container.comparison__img-container--after
               picture
                 source(
                   media='(min-width: 768px)',
@@ -161,10 +160,5 @@ block content
               button.comparison__button.comparison__button--before.comparison__button-indicator-before
                 | Было
               span.comparison__slider-background(role='presentation')
-              input.comparison__range-input(
-                type='range',
-                value='50',
-                max='100'
-              )
               button.comparison__button.comparison__button--after
                 | Стало

@@ -170,11 +170,7 @@
   }
 
   .comparison__wrapper {
-    display: flex;
-    flex-direction: column;
     padding: 0;
-
-    min-height: 1000px;
   }
 
   .comparison__title {
@@ -242,67 +238,46 @@
     display: block;
   }
 
-  .comparison__range-compare-container {
-    position: relative;
-    align-self: center;
-    min-width: 708px;
-
+  .comparison__slider-container {
     margin-top: 70px;
+    background-image: linear-gradient(#fff 30.3%, #f2f2f2 0%);
   }
 
   .comparison__img-container {
-    position: absolute;
-    top: 0;
-    left: 120px;
-    // min-width: 600px;
-  }
-
-  .comparison__img-container--after {
-    left: 170px;
-
-    width: 150px;
-    transition: 1s;
-    overflow: hidden;
-    border-right: 2px solid red;
-  }
-
-  .comparison__img-container--before {
-    // width: 100px;
-    overflow: hidden;
-  }
-
-  .comparison__img {
-    max-width: none;
+    min-height: 560px;
   }
 
   .comparison__img--before {
-    // width: 677px;
-    // height: auto;
-    // overflow: hidden;
+    width: 677px;
   }
 
   .comparison__img--after {
-    // position: absolute;
-    // top: -20px;
-    // left: 110px;
-    // z-index: 2;
+    width: 545px;
+  }
 
-    // width: 100px;
-    // height: auto;
+  .comparison__controls {
+    width: 225px;
   }
 
   .comparison__slider-background {
-    display: none;
+    top: 24px;
+    width: 88px;
   }
 
-  .comparison__range-input {
-    display: initial;
+  .comparison__button {
+    font-size: 1.25rem;
+    background-color: #f2f2f2;
   }
 
-  .comparison__button-indicator-before,
+  .comparison__button-indicator-before {
+    &::before {
+      top: 20px;
+    }
+  }
   .comparison__button-indicator-after {
     &::before {
-      display: none;
+      top: 20px;
+      right: 77px;
     }
   }
 }
@@ -311,10 +286,13 @@
   // make block take full width of the screen to "fill" the background with color
   .comparison {
     grid-column: 1 / 4;
+
+    background-image: linear-gradient(#fff 26.5%, #f2f2f2 0%);
   }
 
   .comparison__title {
-    padding-left: 110px;
+    width: 1220px;
+    margin: 0 auto;
   }
 
   .comparison__wrapper {
@@ -324,10 +302,9 @@
 
     width: 1440px;
     padding: 0 110px;
-    padding-bottom: 75px;
+    padding-bottom: 40px;
+    margin: 0 auto;
     margin-top: 75px;
-
-    background-color: #f2f2f2;
   }
 
   .comparison__text {
@@ -362,5 +339,32 @@
   .comparison__cost-price {
     display: inline-block;
     padding-left: 58px;
+  }
+
+  .comparison__slider-container {
+    width: 700px;
+    margin-top: -175px;
+    background-image: none;
+  }
+
+  .comparison__img-container {
+    min-height: 520px;
+  }
+
+  .comparison__controls {
+    padding-bottom: 23px;
+    margin-left: 280px;
+  }
+
+  .comparison__img {
+    padding: 0;
+    margin: 0;
+
+    &--before {
+      margin-left: 50px;
+    }
+    &--after {
+      margin-left: 140px;
+    }
   }
 }

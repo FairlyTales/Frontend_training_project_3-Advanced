@@ -78,12 +78,6 @@ function imgCompareButtons() {
   });
 }
 
-function imgCompareShowBothPictures() {
-  const imgAfter = document.querySelector('.comparison__img--after');
-  imgAfter.classList.remove('visually-hidden');
-}
-
-function imgCompareRange() {}
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
   removeNoJsFallback();
@@ -95,6 +89,7 @@ function checkDeviceWidth() {
   if (desktopWidth.matches) {
     switch (currentPage.id) {
       case 'js-indexPage':
+        imgCompareButtons();
         break;
       case 'js-catalogPage':
         break;
@@ -104,7 +99,7 @@ function checkDeviceWidth() {
   } else if (tabletWidth.matches) {
     switch (currentPage.id) {
       case 'js-indexPage':
-        imgCompareShowBothPictures();
+        imgCompareButtons();
         break;
       case 'js-catalogPage':
         break;
