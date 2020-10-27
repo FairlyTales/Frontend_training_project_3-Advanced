@@ -85,11 +85,6 @@
   min-height: 290px;
   padding-top: 43px;
   margin: 0 auto;
-
-  &--after {
-  }
-  &--before {
-  }
 }
 
 .comparison__controls {
@@ -101,22 +96,6 @@
   padding-top: 8px;
   padding-bottom: 36px;
   margin: 0 auto;
-
-  // white background for indicators
-  &::before {
-    position: absolute;
-    top: 21px;
-    left: 66px;
-
-    width: 84px;
-    height: 14px;
-
-    content: '';
-
-    background-color: #fff;
-    border: 1px solid #cdcdcd;
-    border-radius: 5px;
-  }
 }
 
 .comparison__button {
@@ -136,6 +115,7 @@
     position: absolute;
     top: 17px;
     left: 72px;
+    z-index: 1;
 
     width: 35px;
     height: 6px;
@@ -153,6 +133,7 @@
     position: absolute;
     top: 17px;
     right: 72px;
+    z-index: 1;
 
     width: 35px;
     height: 6px;
@@ -165,11 +146,221 @@
   }
 }
 
+.comparison__slider-background {
+  position: absolute;
+  top: 21px;
+  left: 66px;
+
+  display: block;
+  width: 84px;
+  height: 14px;
+
+  background-color: #fff;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+
+.comparison__range-input {
+  display: none;
+}
+
 @media (min-width: vars.$tablet-width) {
+  .comparison {
+    background-color: #fff;
+  }
+
   .comparison__wrapper {
+    display: flex;
+    flex-direction: column;
     padding: 0;
+
+    min-height: 1000px;
+  }
+
+  .comparison__title {
+    padding-top: 18px;
+    padding-left: 0;
+
+    font-size: 3.75rem;
+    font-weight: 400;
+    line-height: 1em;
+  }
+
+  .comparison__text {
+    padding-top: 65px;
+    padding-left: 0;
+
+    font-size: 1rem;
+    line-height: 1.5em;
+  }
+
+  .comparison__stats-list {
+    grid-template-columns: 161px 161px;
+    column-gap: 43px;
+
+    padding-top: 52px;
+    padding-left: 0;
+  }
+
+  .comparison__stats-big-text {
+    font-size: 1.875rem;
+    line-height: 1.24em;
+  }
+
+  .comparison__stats-text {
+    top: 7px;
+    width: auto;
+
+    padding-top: 7px;
+
+    font-size: 0.875rem;
+    background-color: #fff;
+
+    & > br {
+      display: none;
+    }
+  }
+
+  // correcting sizes of the bottom borders
+  .comparison__stats-item:nth-child(1) > .comparison__stats-text {
+    margin: 0 23px;
+  }
+  .comparison__stats-item:nth-child(2) > .comparison__stats-text {
+    margin: 0 10px;
+  }
+
+  .comparison__cost {
+    padding-top: 0;
+    margin-top: -65px;
+
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    text-align: right;
+  }
+
+  .comparison__cost-price {
+    display: block;
+  }
+
+  .comparison__range-compare-container {
+    position: relative;
+    align-self: center;
+    min-width: 708px;
+
+    margin-top: 70px;
+  }
+
+  .comparison__img-container {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    // min-width: 600px;
+  }
+
+  .comparison__img-container--after {
+    left: 170px;
+
+    width: 150px;
+    transition: 1s;
+    overflow: hidden;
+    border-right: 2px solid red;
+  }
+
+  .comparison__img-container--before {
+    // width: 100px;
+    overflow: hidden;
+  }
+
+  .comparison__img {
+    max-width: none;
+  }
+
+  .comparison__img--before {
+    // width: 677px;
+    // height: auto;
+    // overflow: hidden;
+  }
+
+  .comparison__img--after {
+    // position: absolute;
+    // top: -20px;
+    // left: 110px;
+    // z-index: 2;
+
+    // width: 100px;
+    // height: auto;
+  }
+
+  .comparison__slider-background {
+    display: none;
+  }
+
+  .comparison__range-input {
+    display: initial;
+  }
+
+  .comparison__button-indicator-before,
+  .comparison__button-indicator-after {
+    &::before {
+      display: none;
+    }
   }
 }
 
 @media (min-width: vars.$desktop-width) {
+  // make block take full width of the screen to "fill" the background with color
+  .comparison {
+    grid-column: 1 / 4;
+  }
+
+  .comparison__title {
+    padding-left: 110px;
+  }
+
+  .comparison__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 1440px;
+    padding: 0 110px;
+    padding-bottom: 75px;
+    margin-top: 75px;
+
+    background-color: #f2f2f2;
+  }
+
+  .comparison__text {
+    max-width: 455px;
+    padding-top: 70px;
+
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+
+  .comparison__stats-list {
+    padding-top: 68px;
+  }
+
+  .comparison__stats-big-text {
+    padding-top: 15px;
+  }
+
+  .comparison__stats-text {
+    padding-top: 4px;
+    background-color: #f2f2f2;
+  }
+
+  .comparison__cost {
+    margin: 0;
+    margin-top: 60px;
+
+    line-height: 1em;
+    text-align: left;
+  }
+
+  .comparison__cost-price {
+    display: inline-block;
+    padding-left: 58px;
+  }
 }

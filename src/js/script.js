@@ -43,6 +43,7 @@ function imgCompareButtons() {
   const imgBefore = document.querySelector('.comparison__img--before');
   const imgAfter = document.querySelector('.comparison__img--after');
   const images = document.querySelectorAll('.comparison__img');
+  const slider = document.querySelector('.comparison__slider-background');
 
   function switchToImgAfter() {
     imgBefore.classList.add('visually-hidden');
@@ -70,8 +71,19 @@ function imgCompareButtons() {
         switchToImgBefore();
     })
   );
+  slider.addEventListener('click', (evt) => {
+    // switch images if the slider itself is clicked
+    if (evt.offsetX >= 42) switchToImgAfter();
+    else switchToImgBefore();
+  });
 }
 
+function imgCompareShowBothPictures() {
+  const imgAfter = document.querySelector('.comparison__img--after');
+  imgAfter.classList.remove('visually-hidden');
+}
+
+function imgCompareRange() {}
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
   removeNoJsFallback();
@@ -92,6 +104,7 @@ function checkDeviceWidth() {
   } else if (tabletWidth.matches) {
     switch (currentPage.id) {
       case 'js-indexPage':
+        imgCompareShowBothPictures();
         break;
       case 'js-catalogPage':
         break;
