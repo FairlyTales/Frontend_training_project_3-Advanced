@@ -2,15 +2,17 @@
 @use 'global/mixin' as mixins;
 
 .page-footer {
+  background-color: #f2f2f2;
 }
 
 .page-footer__wrapper {
 }
 
-.contacts__map-interactive {
+.page-footer__footer-contacts {
 }
 
-.contacts__map-fallback-img {
+.page-footer__social {
+  margin-top: 37px;
 }
 
 @media (min-width: vars.$tablet-width) {
