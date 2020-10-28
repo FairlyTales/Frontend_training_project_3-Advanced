@@ -6,7 +6,11 @@ footer.page-footer
           h2.footer-contacts__title
             | Приглашаем к сотрудничеству дилеров!
           p.footer-contacts__text
-            | ул. Большая Конюшенная, д. 19/8 Санкт-Петербург
+            | ул. Большая
+            br
+            | Конюшенная, д. 19/8
+            span.footer-contacts__city
+              | Санкт-Петербург
 
         .footer-contacts__map-container
           iframe.contacts__map-interactive(
@@ -67,7 +71,7 @@ footer.page-footer
               +svgSpriteIcon('icon_instagram_mobile', 16, 16, 'footer-social__icon footer-social__icon--instagram', 'Иконка Инстаграмма')
           li.footer-social__item
             a.footer-social__link(href='#')
-              +svgSpriteIcon('icon_facebook_mobile', 10, 19, 'footer-social__icon zfooter-social__icon--facebook', 'Иконка Фейсбука')
+              +svgSpriteIcon('icon_facebook_mobile', 10, 19, 'footer-social__icon footer-social__icon--facebook', 'Иконка Фейсбука')
 
         a.footer-social__copyright(href='#')
           span.footer-social__copyright-text

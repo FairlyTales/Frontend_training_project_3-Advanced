@@ -18,6 +18,7 @@
 }
 
 .main-nav__item {
+  transition: 0.2s;
   &:hover,
   &:focus {
     opacity: 0.6;
@@ -25,6 +26,9 @@
   &:active {
     opacity: 0.35;
   }
+}
+
+.main-nav__link {
 }
 
 .main-nav__item--current-page {
