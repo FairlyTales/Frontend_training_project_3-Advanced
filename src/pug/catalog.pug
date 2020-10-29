@@ -1,4 +1,4 @@
-extends templates/layout_default
+extends global/layout
 
 block vars
   - var js_page_id = "js-catalogPage";
@@ -32,14 +32,14 @@ block content
           button.button.catalog__btn-expand
             | Показать все
 
-      section.additional
-        h2.additional__title
+      section.additional-items
+        h2.additional-items__title
           | Дополнительные товары
-        ul.addtitonal__list
+        ul.additional-items__list
           +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 200)
           +additionalItem('Питьевая вода', '5 литров', 50)
           +additionalItem('Молоко', '1 литр', 100)
           +additionalItem('Витамины', '1 упаковка (30 г)', 300)
-        .addtitonal__advert
-          p.addtitonal__advert-text
+        .addtitonal-items__advert
+          p.additional-items__advert-text
             | Закажите всё и получите чехол для кота в подарок!

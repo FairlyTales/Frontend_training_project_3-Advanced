@@ -121,6 +121,10 @@
   font-family: 'Arial', sans-serif;
 }
 
+.footer-social__copyright-icon {
+  width: 30px;
+}
+
 @media (min-width: vars.$tablet-width) {
   .footer-social__wrapper {
     flex-direction: row;

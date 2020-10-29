@@ -1,26 +1,26 @@
-//* global/basic stylesheets
+//* global styles
 @use 'global/normalize';
 @use 'global/variables';
 @use 'global/mixin';
 @use 'global/sprite';
 @use 'global/scaffolding';
+@use 'global/button';
+@use 'global/page-main';
 
-//* base styles for buttons, sliders, etc.
-@use 'blocks/button';
+//* header
+@use 'header/page-header';
+@use 'header/header__main-nav';
 
-//* header blocks
-@use 'blocks/page-main';
-@use 'blocks/page-header';
-@use 'blocks/main-nav';
+// * content blocks
+@use 'blocks/main-info';
+@use 'blocks/services';
+@use 'blocks/advantages';
+@use 'blocks/comparison';
+@use 'blocks/catalog';
+@use 'blocks/additional-items';
+@use 'blocks/program';
 
-//* page content blocks
-// @use 'blocks/';
-@use 'blocks/block_main-info';
-@use 'blocks/block_services';
-@use 'blocks/block_advantages';
-@use 'blocks/block_comparison';
-
-//* footer blocks
-@use 'blocks/page-footer';
-@use 'blocks/footer-contacts';
-@use 'blocks/footer-social';
+//* footer
+@use 'footer/page-footer';
+@use 'footer/footer__contacts';
+@use 'footer/footer__social';

@@ -1,21 +1,26 @@
+- var page_language = "ru";
+- var external_font = "Oswald-Regular";
+
 include mixins
 block vars
 
 doctype html
-html(lang='ru')
+html(lang=page_language)
   head
     meta(charset='UTF-8')
     meta(name='description', content=page_decription)
     meta(name='keywords', content=page_keywords)
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='preload', href='/css/style.min.css', as='style')
+
     link(
       rel='preload',
-      href='/fonts/Oswald-Regular.woff2',
+      href=`/fonts/${external_font}.woff2`,
       as='font',
       crossorigin='anonymous'
     )
+    link(rel='preload', href='/css/style.min.css', as='style')
     link(rel='preload', href='./js/script.min.js', as='script')
+
     link(rel='stylesheet', href='/css/style.min.css')
     title= page_title
 

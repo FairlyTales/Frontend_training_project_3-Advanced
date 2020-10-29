@@ -124,7 +124,6 @@
     height: 11px;
     content: '';
 
-    transition: 0.05s;
     background-image: url('../img/background_svg/arrow_short.svg');
     background-repeat: no-repeat;
   }
@@ -210,6 +209,8 @@
 
     font-size: 1.25rem;
     line-height: 1em;
+
+    transition: 0.1s;
 
     // arrow icon
     &::after {
