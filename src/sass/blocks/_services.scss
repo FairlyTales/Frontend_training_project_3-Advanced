@@ -114,6 +114,8 @@
   line-height: 1rem;
   text-transform: uppercase;
 
+  transition: 0.2s;
+
   // arrow icon
   &::after {
     position: absolute;
@@ -133,8 +135,13 @@
     background-image: url('../img/background_svg/arrow_long.svg');
   }
 
-  &:active {
+  &:focus,
+  &:hover {
     opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
@@ -164,6 +171,7 @@
     }
   }
 
+  // cat image
   .services__title--slim::after {
     top: 84px;
     left: calc(63% + 30px);

@@ -78,6 +78,42 @@ function imgCompareButtons() {
   });
 }
 
+function catalogExpandCollapse() {
+  const expandButton = document.querySelector('.catalog__expand-button');
+  const hiddenCatalogItems = document.querySelectorAll(
+    '.catalog__item--hidden'
+  );
+  let itemsHidden = true;
+
+  expandButton.addEventListener('click', expandCollapse);
+
+  function expandCollapse() {
+    if (itemsHidden) {
+      hiddenCatalogItems.forEach((item) => {
+        item.style.display = 'grid';
+      });
+      expandButton.querySelector('.catalog__expand-heading').innerText =
+        'Скрыть 100500 товаров';
+      expandButton.querySelector('.catalog__expand-text').innerText =
+        'Теперь я знаю что вкусов гораздо больше!';
+      expandButton.querySelector('.catalog__btn-expand').innerText =
+        'Скрыть товары';
+      itemsHidden = false;
+    } else {
+      hiddenCatalogItems.forEach((item) => {
+        item.style.display = 'none';
+      });
+      expandButton.querySelector('.catalog__expand-heading').innerText =
+        'Показать ещё 100500 товаров';
+      expandButton.querySelector('.catalog__expand-text').innerText =
+        'На самом деле вкусов гораздо больше!';
+      expandButton.querySelector('.catalog__btn-expand').innerText =
+        'Показать все';
+      itemsHidden = true;
+    }
+  }
+}
+
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
   removeNoJsFallback();
@@ -92,6 +128,7 @@ function checkDeviceWidth() {
         imgCompareButtons();
         break;
       case 'js-catalogPage':
+        catalogExpandCollapse();
         break;
       case 'js-formPage':
         break;
@@ -102,6 +139,7 @@ function checkDeviceWidth() {
         imgCompareButtons();
         break;
       case 'js-catalogPage':
+        catalogExpandCollapse();
         break;
       case 'js-formPage':
         break;
@@ -115,6 +153,7 @@ function checkDeviceWidth() {
         imgCompareButtons();
         break;
       case 'js-catalogPage':
+        catalogExpandCollapse();
         break;
       case 'js-formPage':
         break;

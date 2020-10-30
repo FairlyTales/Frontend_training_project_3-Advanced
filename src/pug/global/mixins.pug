@@ -63,50 +63,97 @@ mixin svgSpriteIcon(name, width, height, BEMclass, title)
 
 //- create new item in catalog__list
 //- +catalogItem(imgNumber, 'Name', volume, 'taste', price)
-mixin catalogItem(imgNumber, name, volume, taste, price)
-  li.catalog__item
-    picture
-      source(
-        media='(min-width: 1200px)',
-        srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
-        type='image/webp'
-      )
-      source(
-        media='(min-width: 1200px)',
-        srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
-      )
-      source(
-        media='(min-width: 768px)',
-        srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
-        type='image/webp'
-      )
-      source(
-        media='(min-width: 768px)',
-        srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
-      )
-      source(
-        srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
-        type='image/webp'
-      )
-      img.page-header__logo(
-        src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
-        width='140',
-        height='144',
-        alt='Изображение продукта'
-      )
-    h3.catalog__item-name= `Cat Energy ${name}`
-    table.catalog__item-table
-      tr
-        td Объём
-        td= `${volume} г`
-      tr
-        td Вкус
-        td= taste
-      tr
-        td Цена
-        td= `${price} Р.`
-    button.button.catalog__button.catalog__button--order
-      | Заказать
+mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
+  if hidden
+    li.catalog__item.catalog__item--hidden
+      picture.catalog__item-image-container
+        source(
+          media='(min-width: 1200px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+          type='image/webp'
+        )
+        source(
+          media='(min-width: 1200px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+          type='image/webp'
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+        )
+        source(
+          srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+          type='image/webp'
+        )
+        img.catalog__item-image(
+          src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+          width='140',
+          height='144',
+          alt='Изображение продукта'
+        )
+      h3.catalog__item-name= `Cat Energy ${name}`
+      table.catalog__item-table
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Объём
+          td.catalog__table-cell.catalog__table-cell--value= `${volume} г.`
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Вкус
+          td.catalog__table-cell.catalog__table-cell--value= taste
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Цена
+          td.catalog__table-cell.catalog__table-cell--value= `${price} Р.`
+      .catalog__button-wrapper
+        button.button.catalog__button.catalog__button--order
+          | Заказать
+  else
+    li.catalog__item
+      picture.catalog__item-image-container
+        source(
+          media='(min-width: 1200px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+          type='image/webp'
+        )
+        source(
+          media='(min-width: 1200px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+          type='image/webp'
+        )
+        source(
+          media='(min-width: 768px)',
+          srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+        )
+        source(
+          srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+          type='image/webp'
+        )
+        img.catalog__item-image(
+          src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+          width='140',
+          height='144',
+          alt='Изображение продукта'
+        )
+      h3.catalog__item-name= `Cat Energy ${name}`
+      table.catalog__item-table
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Объём
+          td.catalog__table-cell.catalog__table-cell--value= `${volume} г.`
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Вкус
+          td.catalog__table-cell.catalog__table-cell--value= taste
+        tr.catalog__table-row
+          td.catalog__table-cell.catalog__table-cell--property Цена
+          td.catalog__table-cell.catalog__table-cell--value= `${price} Р.`
+      .catalog__button-wrapper
+        button.button.catalog__button.catalog__button--order
+          | Заказать
 
 //- create new item in additional__list
 //- +additionalItem('name', 'volume', price)

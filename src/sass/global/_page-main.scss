@@ -1,7 +1,33 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
-.page-main {
+.page-main__title-wrapper {
+  position: relative;
+  display: flex;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    content: '';
+
+    background-color: #ededed;
+  }
+}
+
+.page-main__title {
+  padding-bottom: 25px;
+  margin: 0 auto;
+  margin-top: 14px;
+
+  font-size: 2.25rem;
+  line-height: 1.68em;
+
+  text-align: left;
 }
 
 .page-main__wrapper {
@@ -31,6 +57,21 @@
       1fr
       clamp(708px, 80%, 1000px)
       1fr;
+  }
+
+  .page-main__title-wrapper::after {
+    content: none;
+  }
+
+  .page-main__title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0;
+
+    font-size: 3.75rem;
+    font-weight: 400;
+    line-height: 1em;
+    text-align: left;
   }
 
   .page-main__main-info {

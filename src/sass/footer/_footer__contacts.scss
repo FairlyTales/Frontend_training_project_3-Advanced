@@ -16,8 +16,8 @@
 }
 
 .footer-contacts__title {
+  flex: 1 1 140px;
   margin: 0;
-  margin-right: 22px;
 
   font-size: 16px;
   line-height: 20px;
@@ -25,16 +25,19 @@
 }
 
 .footer-contacts__text {
-  min-width: 140px;
+  flex: 1 1 140px;
   margin: 0;
 
   font-family: 'Arial', sans-serif;
   font-size: 0.875rem;
   line-height: 20px;
-  text-align: right;
+  text-align: left;
 
-  & > br {
-    display: none;
+  @media (min-width: 396px) {
+    padding-left: 10px;
+    & > br {
+      display: none;
+    }
   }
 }
 

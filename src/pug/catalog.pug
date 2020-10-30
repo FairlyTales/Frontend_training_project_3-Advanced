@@ -12,25 +12,30 @@ block header
 block content
   main.page-main
     .page-main__wrapper
-      h1.page-main__title
-        | Каталог продукции
+      .page-main__title-wrapper
+        h1.page-main__title
+          | Каталог продукции
 
       section.catalog
-        h2.visually-hidden Список продукции
-        ul.catalog__list
-          +catalogItem(1, 'Pro 500 г', 500, 'Курица', 700)
-          +catalogItem(2, 'Pro 1000 г', 1000, 'Курица', 1000)
-          +catalogItem(3, 'Pro 500 г', 500, 'Рыба', 700)
-          +catalogItem(4, 'Pro 1000 г', 1000, 'Рыба', 1000)
-          +catalogItem(5, 'Slim 500 г', 500, 'Гречка', 400)
-          +catalogItem(6, 'Slim 1000 г', 1000, 'Гречка', 700)
-          +catalogItem(7, 'Slim 500 г', 500, 'Рис', 500)
-
-        a.catalog__expand(href='#')
-          b.catalog__expand-heading Показать ещё 100500 товаров
-          p.catalog__expand-text На самом деле вкусов гораздо больше!
-          button.button.catalog__btn-expand
-            | Показать все
+        .catalog__wrapper
+          h2.visually-hidden Список продукции
+          ul.catalog__list
+            +catalogItem(1, 'Pro 500 г', 500, 'Курица', 700)
+            +catalogItem(2, 'Pro 1000 г', 1000, 'Курица', 1000)
+            +catalogItem(3, 'Pro 500 г', 500, 'Рыба', 700)
+            +catalogItem(4, 'Pro 1000 г', 1000, 'Рыба', 1000)
+            +catalogItem(5, 'Slim 500 г', 500, 'Гречка', 400)
+            +catalogItem(6, 'Slim 1000 г', 1000, 'Гречка', 700, true)
+            +catalogItem(7, 'Slim 500 г', 500, 'Рис', 500, true)
+            li.catalog__item.catalog__item--expand
+              button.catalog__expand-button
+                +svgSpriteIcon('expand_all', 30, 30, 'catalog__expand-svg', 'показать все товары')
+                b.catalog__expand-heading
+                  | Показать ещё 100500 товаров
+                p.catalog__expand-text
+                  | На самом деле вкусов гораздо больше!
+                span.catalog__btn-expand
+                  | Показать все
 
       section.additional-items
         h2.additional-items__title
