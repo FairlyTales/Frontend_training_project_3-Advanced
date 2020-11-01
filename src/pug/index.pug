@@ -157,8 +157,15 @@ block content
                 )
 
             .comparison__controls
-              button.comparison__button.comparison__button--before.comparison__button-indicator-before
+              button.comparison__button.comparison__button--before.comparison__button-indicator-before(
+                type='button'
+              )
                 | Было
               span.comparison__slider-background(role='presentation')
-              button.comparison__button.comparison__button--after
+              button.comparison__button.comparison__button--after(
+                type='button'
+              )
                 | Стало
+
+block footer
+  +pageFooter(js_page_id)

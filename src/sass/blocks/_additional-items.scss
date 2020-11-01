@@ -1,7 +1,217 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
+.additional-items__wrapper {
+}
+
+.additional-items__title {
+  position: relative;
+  left: -30px;
+  display: block;
+
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 28px;
+
+  font-size: 24px;
+  line-height: 1em;
+  text-align: center;
+}
+
+.additional-items__list {
+  @include mixins.reset-list;
+}
+
+.additional-items__item {
+  position: relative;
+  padding: 20px 20px;
+  padding-bottom: 11px;
+
+  &::after {
+    position: absolute;
+    right: 20px;
+    bottom: -8px;
+    left: 20px;
+
+    height: 1px;
+
+    content: '';
+
+    background-color: #cdcdcd;
+  }
+}
+
+.additional-items__item-name {
+  grid-area: itemName;
+
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.additional-items__item-table {
+  grid-area: itemTable;
+  width: 100%;
+
+  margin-top: 13px;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1em;
+
+  border-spacing: 0;
+}
+
+.additional-items__table-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.additional-items__table-cell {
+  padding: 0;
+}
+
+.additional-items__button {
+  grid-area: itemBtn;
+  width: 100%;
+
+  padding: 10px 20px;
+  margin: 0;
+  margin-top: 16px;
+
+  font-size: 1rem;
+  line-height: 1.2em;
+}
+
+.additonal-items__advert-container {
+  padding: 0 20px;
+  margin-top: 47px;
+}
+
+.additonal-items__advert-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 289px;
+
+  background-color: #75b94c;
+  background-image: url('../img/background_img/gift-photo-mobile.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 280px 289px;
+
+  @media (min-width: 321px) {
+    min-height: 200px;
+
+    background-image: url('../img/background_img/gift-photo-tablet.jpg');
+    background-size: 708px 200px;
+  }
+}
+
+.additional-items__advert-svg-icon {
+  margin-top: 63px;
+  fill: #fff;
+
+  @media (min-width: 321px) {
+    margin-top: 30px;
+  }
+}
+
+.additional-items__advert-text {
+  padding: 0 20vw;
+  margin: 0;
+  margin-top: 62px;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.3em;
+  color: #fff;
+  text-align: center;
+
+  @media (min-width: 321px) {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 560px) {
+  .additional-items__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .catalog__item-name {
+    width: 15vw;
+  }
+
+  .catalog__item-image-container {
+    min-width: 140px;
+  }
+}
+
 @media (min-width: vars.$tablet-width) {
+  .additional-items__title-container {
+    padding-left: 9vw;
+  }
+
+  .additional-items__title {
+    margin-bottom: 50px;
+
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  .additional-items__list {
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+
+  .additional-items__item {
+    outline: 1px solid #cdcdcd;
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .additional-items__item-name {
+    font-size: 1.25rem;
+  }
+
+  .additional-items__item-table {
+    font-size: 1rem;
+  }
+
+  .additonal-items__advert-container {
+    // не должно здесь быть ограничения по ширине, некрасиво это. Но из-за того что картинка шире 708 и уже 1100 пикселей у меня отсутствует, то ограничиваю ширину чтобы не заполнять пустое пространство повторением картинки или однотонным цветом/градиентом. Мб можно подобрать какой-нибудь градиент, но всё равно будет не то, чтобы было красиво нужна именно картинка подходящей ширины.
+    max-width: 708px;
+
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .additonal-items__advert-link {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .additional-items__advert-svg-icon {
+    margin: 0;
+  }
+
+  .additional-items__advert-text {
+    max-width: 200px;
+
+    padding: 0 20px;
+    margin: 0;
+
+    text-align: left;
+  }
 }
 
 @media (min-width: vars.$desktop-width) {

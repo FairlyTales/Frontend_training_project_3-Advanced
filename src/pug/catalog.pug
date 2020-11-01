@@ -16,7 +16,7 @@ block content
         h1.page-main__title
           | Каталог продукции
 
-      section.catalog
+      section.page-main__catalog.catalog
         .catalog__wrapper
           h2.visually-hidden Список продукции
           ul.catalog__list
@@ -33,7 +33,7 @@ block content
             +catalogItem(4, 'Pro 1000 г', 1000, 'Рыба', 1000, true)
             li.catalog__item.catalog__item--expand
               .catalog__item-expand-outline-container
-                button.catalog__expand-button
+                button.catalog__expand-button(type='button')
                   +svgSpriteIcon('expand_all', 30, 30, 'catalog__expand-svg', 'показать все товары')
                   b.catalog__expand-heading
                     | Показать ещё 100500 товаров
@@ -42,14 +42,23 @@ block content
                   span.catalog__btn-expand
                     | Показать все
 
-      section.additional-items
-        h2.additional-items__title
-          | Дополнительные товары
-        ul.additional-items__list
-          +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 200)
-          +additionalItem('Питьевая вода', '5 литров', 50)
-          +additionalItem('Молоко', '1 литр', 100)
-          +additionalItem('Витамины', '1 упаковка (30 г)', 300)
-        .addtitonal-items__advert
-          p.additional-items__advert-text
-            | Закажите всё и получите чехол для кота в подарок!
+      section.page-main__additional-items.additional-items
+        .additional-items__wrapper
+          .additional-items__title-container
+            h2.additional-items__title
+              | Дополнительные товары
+          ul.additional-items__list
+            +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 100)
+            +additionalItem('Питьевая вода', '5 литров', 50)
+            +additionalItem('Молоко', '1 литр', 100)
+            +additionalItem('Витамины', '1 упаковка (30 г)', 300)
+            //- +additionalItem('Игрушка-дразнилка', '1 шт.', 350)
+
+          .additonal-items__advert-container
+            a.additonal-items__advert-link(href='#')
+              +svgSpriteIcon('icon_present', 55, 60, 'additional-items__advert-svg-icon', 'Изображение подарка')
+              p.additional-items__advert-text
+                | Закажите всё и получите чехол для кота в подарок!
+
+block footer
+  +pageFooter(js_page_id)

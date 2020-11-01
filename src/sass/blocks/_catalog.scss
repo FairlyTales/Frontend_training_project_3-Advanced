@@ -9,7 +9,6 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  // row-gap: 20px;
 }
 
 .catalog__item {
@@ -35,7 +34,6 @@
     content: '';
 
     background-color: #ededed;
-    // background-color: red;
   }
 
   &--hidden {
@@ -78,6 +76,8 @@
   font-family: 'Arial', sans-serif;
   font-size: 0.75rem;
   line-height: 1.3em;
+
+  border-spacing: 0;
 }
 
 .catalog__table-row {
@@ -111,6 +111,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.catalog__item-expand-outline-container {
+  width: 100%;
 }
 
 .catalog__expand-button {
@@ -172,7 +176,6 @@
   display: block;
 
   padding: 11px 0;
-  // margin-bottom: 25px;
 
   font-size: 1rem;
   line-height: 1.3em;

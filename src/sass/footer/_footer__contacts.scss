@@ -11,12 +11,11 @@
   padding: 0 20px;
   padding-top: 28px;
   padding-bottom: 25px;
-
-  background-color: #fff;
 }
 
 .footer-contacts__title {
   flex: 1 1 140px;
+  max-width: 321px;
   margin: 0;
 
   font-size: 16px;
@@ -53,6 +52,12 @@
 .contacts__map-interactive {
   width: 100%;
   height: 363px;
+}
+
+@media (min-width: 560px) {
+  .footer-contacts__text {
+    text-align: right;
+  }
 }
 
 @media (min-width: vars.$tablet-width) {
@@ -104,6 +109,8 @@
 
     padding: 55px 75px;
     padding-right: 55px;
+
+    background-color: #fff;
   }
 
   .footer-contacts__text {

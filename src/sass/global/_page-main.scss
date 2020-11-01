@@ -52,6 +52,10 @@
   margin-top: 47px;
 }
 
+.page-main__additional-items {
+  margin-bottom: 35px;
+}
+
 @media (min-width: vars.$tablet-width) {
   .page-main__wrapper {
     grid-template-columns:
@@ -98,6 +102,11 @@
 
   .page-main__comparison {
     margin-top: 130px;
+  }
+
+  .page-main__additional-items {
+    margin-top: 40px;
+    margin-bottom: 75px;
   }
 }
 

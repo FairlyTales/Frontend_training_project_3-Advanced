@@ -108,6 +108,109 @@ mixin pageHeader(pageId)
                 li.main-nav__item.main-nav__item--form-page
                   a.main-nav__link(href='form.html') Подбор программы
 
+//- add page footer
+//- +pageFooter(js_page_id)
+mixin pageFooter(pageId)
+  if pageId == 'js-indexPage'
+    footer.page-footer.page-footer--index-page
+      .page-footer__wrapper
+        section.page-footer__contacts.footer-contacts
+          .footer-contacts__container
+            .footer-contacts__text-container
+              h2.footer-contacts__title
+                | Приглашаем к сотрудничеству дилеров!
+              p.footer-contacts__text
+                | ул.Большая&nbsp;
+                br
+                | Конюшенная, д. 19/8
+                span.footer-contacts__city
+                  | Санкт-Петербург
+
+            .footer-contacts__map-container
+              iframe.contacts__map-interactive(
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya%20Konyushennaya%20St%2C%2019%2C%20Sankt-Peterburg%2C%20Russia%2C%20191186!5e0!3m2!1sen!2snl!4v1596738254793!5m2!1sen!2snl',
+                width='320',
+                height='363',
+                frameborder='1',
+                allowfullscreen='true'
+              )
+
+        section.page-footer__social.footer-social
+          .footer-social__wrapper
+            a.footer-social__main-page-link(href='index.html')
+              img.footer-social__main-page-link-img(
+                src='/img/content_svg/logo_footer.svg',
+                width='128',
+                height='24',
+                alt='Логотип Cat Energy'
+              )
+
+            ul.footer-social__list
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_vk_mobile', 22, 12, 'footer-social__icon footer-social__icon--vk', 'Иконка Вконтакте')
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_instagram_mobile', 16, 16, 'footer-social__icon footer-social__icon--instagram', 'Иконка Инстаграмма')
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_facebook_mobile', 10, 19, 'footer-social__icon footer-social__icon--facebook', 'Иконка Фейсбука')
+
+            a.footer-social__copyright(href='#')
+              span.footer-social__copyright-text
+                | HTML Academy
+              +svgSpriteIcon('HTMLAcademy_logo_footer', 27, 34, 'footer-social__copyright-icon', 'Логотип HTML Academy')
+
+  else
+    footer.page-footer
+      .page-footer__wrapper
+        section.page-footer__contacts.footer-contacts
+          .footer-contacts__container
+            .footer-contacts__text-container
+              h2.footer-contacts__title
+                | Приглашаем к сотрудничеству дилеров!
+              p.footer-contacts__text
+                | ул.Большая&nbsp;
+                br
+                | Конюшенная, д. 19/8
+                span.footer-contacts__city
+                  | Санкт-Петербург
+
+            .footer-contacts__map-container
+              iframe.contacts__map-interactive(
+                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651586!2d30.320894616097!3d59.938794181876254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya%20Konyushennaya%20St%2C%2019%2C%20Sankt-Peterburg%2C%20Russia%2C%20191186!5e0!3m2!1sen!2snl!4v1596738254793!5m2!1sen!2snl',
+                width='320',
+                height='363',
+                frameborder='1',
+                allowfullscreen='true'
+              )
+
+        section.page-footer__social.footer-social
+          .footer-social__wrapper
+            a.footer-social__main-page-link(href='index.html')
+              img.footer-social__main-page-link-img(
+                src='/img/content_svg/logo_footer.svg',
+                width='128',
+                height='24',
+                alt='Логотип Cat Energy'
+              )
+
+            ul.footer-social__list
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_vk_mobile', 22, 12, 'footer-social__icon footer-social__icon--vk', 'Иконка Вконтакте')
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_instagram_mobile', 16, 16, 'footer-social__icon footer-social__icon--instagram', 'Иконка Инстаграмма')
+              li.footer-social__item
+                a.footer-social__link(href='#')
+                  +svgSpriteIcon('icon_facebook_mobile', 10, 19, 'footer-social__icon footer-social__icon--facebook', 'Иконка Фейсбука')
+
+            a.footer-social__copyright(href='#')
+              span.footer-social__copyright-text
+                | HTML Academy
+              +svgSpriteIcon('HTMLAcademy_logo_footer', 27, 34, 'footer-social__copyright-icon', 'Логотип HTML Academy')
+
 //- include SVG's from SVG-sprite
 //- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
 mixin svgSpriteIcon(name, width, height, BEMclass, title)
@@ -163,7 +266,7 @@ mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
           td.catalog__table-cell.catalog__table-cell--property Цена
           td.catalog__table-cell.catalog__table-cell--value= `${price} Р.`
       .catalog__button-wrapper
-        button.button.catalog__button.catalog__button--order
+        button.button.catalog__button.catalog__button--order(type='button')
           | Заказать
   else
     li.catalog__item
@@ -210,17 +313,18 @@ mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
           td.catalog__table-cell.catalog__table-cell--property Цена
           td.catalog__table-cell.catalog__table-cell--value= `${price} Р.`
       .catalog__button-wrapper
-        button.button.catalog__button.catalog__button--order
+        button.button.catalog__button.catalog__button--order(type='button')
           | Заказать
 
 //- create new item in additional__list
 //- +additionalItem('name', 'volume', price)
 mixin additionalItem(name, volume, price)
-  li.additional__item
-    h3.additional__item-name= name
-    table.additional__item-table
-      tr
-        td= volume
-        td= `${price} Р.`
-    button.button.additional__button
+  li.additional-items__item
+    a.additional-items__item-name-link(href='#')
+      h3.additional-items__item-name= name
+    table.additional-items__item-table
+      tr.additional-items__table-row
+        td.additional-items__table-cell= volume
+        td.additional-items__table-cell= `${price} Р.`
+    button.button.additional-items__button(type='button')
       | Заказать

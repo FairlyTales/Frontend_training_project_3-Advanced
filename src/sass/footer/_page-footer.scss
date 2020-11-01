@@ -3,6 +3,10 @@
 
 .page-footer {
   background-color: #f2f2f2;
+
+  &--index-page {
+    background-color: #fff;
+  }
 }
 
 .page-footer__social {
