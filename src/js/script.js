@@ -114,10 +114,24 @@ function catalogExpandCollapse() {
   }
 }
 
+function catalogShowAmountOfItems(itemsToShow) {
+  const hiddenCatalogItems = document.querySelectorAll(
+    '.catalog__item--hidden'
+  );
+  const catalogItemsAmount =
+    document.querySelectorAll('.catalog__item').length - 1; // -1 because last catalog__item is an "expand all" button, we don't count it as an actual catalog item
+  const itemsShown = catalogItemsAmount - hiddenCatalogItems.length;
+
+  if (itemsToShow > itemsShown) {
+    const numberOfItemstoShow = itemsToShow - itemsShown;
+    for (let i = 0; i < numberOfItemstoShow; i++) {
+      hiddenCatalogItems[i].classList.remove('catalog__item--hidden');
+    }
+  }
+}
+
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
-  removeNoJsFallback();
-
   const tabletWidth = window.matchMedia('(min-width: 768px)');
   const desktopWidth = window.matchMedia('(min-width: 1400px)');
   const currentPage = document.querySelector('.page-header');
@@ -127,9 +141,12 @@ function checkDeviceWidth() {
       case 'js-indexPage':
         imgCompareButtons();
         break;
+
       case 'js-catalogPage':
+        catalogShowAmountOfItems(7);
         catalogExpandCollapse();
         break;
+
       case 'js-formPage':
         break;
     }
@@ -138,9 +155,12 @@ function checkDeviceWidth() {
       case 'js-indexPage':
         imgCompareButtons();
         break;
+
       case 'js-catalogPage':
+        catalogShowAmountOfItems(5);
         catalogExpandCollapse();
         break;
+
       case 'js-formPage':
         break;
     }
@@ -152,9 +172,11 @@ function checkDeviceWidth() {
       case 'js-indexPage':
         imgCompareButtons();
         break;
+
       case 'js-catalogPage':
         catalogExpandCollapse();
         break;
+
       case 'js-formPage':
         break;
     }
@@ -165,4 +187,5 @@ function checkDeviceWidth() {
 //* -----------Function calls-------------
 //*
 
+removeNoJsFallback();
 checkDeviceWidth();
