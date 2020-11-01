@@ -1,58 +1,112 @@
 //- add page header
 //- +pageHeader(js_page_id)
 mixin pageHeader(pageId)
-  header.page-header(id=pageId)
-    .page-header__wrapper
-      a.page-header__logo-link-mobile-only(href='index.html')
-        img.page-header__logo-mobile-only(
-          src='/img/content_svg/logo_mobile.svg',
-          width='33',
-          height='38',
-          alt='Малый логотип Cat Energy'
-        )
-      a.page-header__logo-link(href='index.html')
-        picture
-          source(
-            media='(min-width: 1440px)',
-            srcset='/img/content_svg/logo_desktop.svg'
+  if pageId == 'js-indexPage'
+    header.page-header(id=pageId)
+      .page-header__wrapper
+        a.page-header__logo-link-mobile-only(href='index.html')
+          img.page-header__logo-mobile-only(
+            src='/img/content_svg/logo_mobile.svg',
+            width='33',
+            height='38',
+            alt='Малый логотип Cat Energy'
           )
-          source(
-            media='(min-width: 768px)',
-            srcset='/img/content_svg/logo_tablet.svg'
+        a.page-header__logo-link(href='index.html')
+          picture
+            source(
+              media='(min-width: 1440px)',
+              srcset='/img/content_svg/logo_desktop.svg'
+            )
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_svg/logo_tablet.svg'
+            )
+            img.page-header__logo(
+              src='/img/content_svg/logo_mobile_text.svg',
+              width='101',
+              height='18',
+              alt='Логотип Cat Energy'
+            )
+        button.page-header__nav-toggle(type='button')
+          span.visually-hidden Открыть меню
+          +svgSpriteIcon('hamburger_open', 24, 18, 'page-header__hamburger', 'иконка открытия меню')
+
+        nav.page-header__main-nav.main-nav.main-nav--closed.main-nav--no-js.main-nav--index-page
+          .main-nav__wrapper
+            ul.main-nav__list
+              if pageId === 'js-indexPage'
+                li.main-nav__item.main-nav__item--index-page.main-nav__item--current-page
+                  a.main-nav__link Главная
+              else
+                li.main-nav__item.main-nav__item--index-page
+                  a.main-nav__link(href='index.html') Главная
+
+              if pageId === 'js-catalogPage'
+                li.main-nav__item.main-nav__item--catalog-page.main-nav__item--current-page
+                  a.main-nav__link Каталог продукции
+              else
+                li.main-nav__item.main-nav__item--catalog-page
+                  a.main-nav__link(href='catalog.html') Каталог продукции
+
+              if pageId === 'js-formPage'
+                li.main-nav__item.main-nav__item--form-page.main-nav__item--current-page
+                  a.main-nav__link Подбор программы
+              else
+                li.main-nav__item.main-nav__item--form-page
+                  a.main-nav__link(href='form.html') Подбор программы
+  else
+    header.page-header(id=pageId)
+      .page-header__wrapper
+        a.page-header__logo-link-mobile-only(href='index.html')
+          img.page-header__logo-mobile-only(
+            src='/img/content_svg/logo_mobile.svg',
+            width='33',
+            height='38',
+            alt='Малый логотип Cat Energy'
           )
-          img.page-header__logo(
-            src='/img/content_svg/logo_mobile_text.svg',
-            width='101',
-            height='18',
-            alt='Логотип Cat Energy'
-          )
-      button.page-header__nav-toggle(type='button')
-        span.visually-hidden Открыть меню
-        +svgSpriteIcon('hamburger_open', 24, 18, 'page-header__hamburger', 'иконка открытия меню')
+        a.page-header__logo-link(href='index.html')
+          picture
+            source(
+              media='(min-width: 1440px)',
+              srcset='/img/content_svg/logo_desktop.svg'
+            )
+            source(
+              media='(min-width: 768px)',
+              srcset='/img/content_svg/logo_tablet.svg'
+            )
+            img.page-header__logo(
+              src='/img/content_svg/logo_mobile_text.svg',
+              width='101',
+              height='18',
+              alt='Логотип Cat Energy'
+            )
+        button.page-header__nav-toggle(type='button')
+          span.visually-hidden Открыть меню
+          +svgSpriteIcon('hamburger_open', 24, 18, 'page-header__hamburger', 'иконка открытия меню')
 
-      nav.page-header__main-nav.main-nav.main-nav--closed.main-nav--no-js
-        .main-nav__wrapper
-          ul.main-nav__list
-            if pageId === 'js-indexPage'
-              li.main-nav__item.main-nav__item--index-page.main-nav__item--current-page
-                a.main-nav__link Главная
-            else
-              li.main-nav__item.main-nav__item--index-page
-                a.main-nav__link(href='index.html') Главная
+        nav.page-header__main-nav.main-nav.main-nav--closed.main-nav--no-js
+          .main-nav__wrapper
+            ul.main-nav__list
+              if pageId === 'js-indexPage'
+                li.main-nav__item.main-nav__item--index-page.main-nav__item--current-page
+                  a.main-nav__link Главная
+              else
+                li.main-nav__item.main-nav__item--index-page
+                  a.main-nav__link(href='index.html') Главная
 
-            if pageId === 'js-catalogPage'
-              li.main-nav__item.main-nav__item--catalog-page.main-nav__item--current-page
-                a.main-nav__link Каталог продукции
-            else
-              li.main-nav__item.main-nav__item--catalog-page
-                a.main-nav__link(href='catalog.html') Каталог продукции
+              if pageId === 'js-catalogPage'
+                li.main-nav__item.main-nav__item--catalog-page.main-nav__item--current-page
+                  a.main-nav__link Каталог продукции
+              else
+                li.main-nav__item.main-nav__item--catalog-page
+                  a.main-nav__link(href='catalog.html') Каталог продукции
 
-            if pageId === 'js-formPage'
-              li.main-nav__item.main-nav__item--form-page.main-nav__item--current-page
-                a.main-nav__link Подбор программы
-            else
-              li.main-nav__item.main-nav__item--form-page
-                a.main-nav__link(href='form.html') Подбор программы
+              if pageId === 'js-formPage'
+                li.main-nav__item.main-nav__item--form-page.main-nav__item--current-page
+                  a.main-nav__link Подбор программы
+              else
+                li.main-nav__item.main-nav__item--form-page
+                  a.main-nav__link(href='form.html') Подбор программы
 
 //- include SVG's from SVG-sprite
 //- +svgSpriteIcon('name', width, height, 'BEMclass', 'title')
@@ -66,36 +120,38 @@ mixin svgSpriteIcon(name, width, height, BEMclass, title)
 mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
   if hidden
     li.catalog__item.catalog__item--hidden
-      picture.catalog__item-image-container
-        source(
-          media='(min-width: 1200px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
-          type='image/webp'
-        )
-        source(
-          media='(min-width: 1200px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
-        )
-        source(
-          media='(min-width: 768px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
-          type='image/webp'
-        )
-        source(
-          media='(min-width: 768px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
-        )
-        source(
-          srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
-          type='image/webp'
-        )
-        img.catalog__item-image(
-          src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
-          width='140',
-          height='144',
-          alt='Изображение продукта'
-        )
-      h3.catalog__item-name= `Cat Energy ${name}`
+      a.catalog__item-image-container(href='#')
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+            type='image/webp'
+          )
+          source(
+            media='(min-width: 1200px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+          )
+          source(
+            media='(min-width: 768px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+            type='image/webp'
+          )
+          source(
+            media='(min-width: 768px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+          )
+          source(
+            srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+            type='image/webp'
+          )
+          img.catalog__item-image(
+            src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+            width='140',
+            height='144',
+            alt='Изображение продукта'
+          )
+      a.catalog__item-name-container(href='#')
+        h3.catalog__item-name= `Cat Energy ${name}`
       table.catalog__item-table
         tr.catalog__table-row
           td.catalog__table-cell.catalog__table-cell--property Объём
@@ -111,36 +167,38 @@ mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
           | Заказать
   else
     li.catalog__item
-      picture.catalog__item-image-container
-        source(
-          media='(min-width: 1200px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
-          type='image/webp'
-        )
-        source(
-          media='(min-width: 1200px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
-        )
-        source(
-          media='(min-width: 768px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
-          type='image/webp'
-        )
-        source(
-          media='(min-width: 768px)',
-          srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
-        )
-        source(
-          srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
-          type='image/webp'
-        )
-        img.catalog__item-image(
-          src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
-          width='140',
-          height='144',
-          alt='Изображение продукта'
-        )
-      h3.catalog__item-name= `Cat Energy ${name}`
+      a.catalog__item-image-container(href='#')
+        picture
+          source(
+            media='(min-width: 1200px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+            type='image/webp'
+          )
+          source(
+            media='(min-width: 1200px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+          )
+          source(
+            media='(min-width: 768px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+            type='image/webp'
+          )
+          source(
+            media='(min-width: 768px)',
+            srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+          )
+          source(
+            srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+            type='image/webp'
+          )
+          img.catalog__item-image(
+            src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+            width='140',
+            height='144',
+            alt='Изображение продукта'
+          )
+      a.catalog__item-name-container(href='#')
+        h3.catalog__item-name= `Cat Energy ${name}`
       table.catalog__item-table
         tr.catalog__table-row
           td.catalog__table-cell.catalog__table-cell--property Объём

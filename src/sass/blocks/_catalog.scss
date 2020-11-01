@@ -194,26 +194,133 @@
 
 @media (min-width: vars.$tablet-width) {
   .catalog__list {
+    row-gap: 55px;
+    column-gap: 60px;
     margin-top: 50px;
   }
 
   .catalog__item {
-    &::after {
-      content: none;
-    }
-
     grid-template-areas:
       'img'
       'title'
       'table'
       'btn';
-    grid-template-rows: 200px 68px 122px 80px;
+    grid-template-rows: 215px 75px 122px 105px;
     grid-template-columns: 1fr;
+
+    padding-bottom: 0;
+
+    background-image: linear-gradient(#fff 17%, #f2f2f2 0%);
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .catalog__item-image-container {
+    align-items: flex-end;
+  }
+
+  .catalog__item-image {
+    z-index: 0;
+
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    max-height: 300px;
+  }
+
+  .catalog__item-name-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
   }
 
   .catalog__item-name {
-    width: 100%;
+    width: 150px;
+    padding-top: 0;
+
+    font-size: 20px;
+    line-height: 1em;
     text-align: center;
+  }
+
+  .catalog__item-table {
+    padding: 25px 5vw;
+    font-size: 16px;
+    line-height: 1em;
+  }
+
+  .catalog__table-row {
+    position: relative;
+    margin-bottom: 11px;
+
+    &::after {
+      position: absolute;
+      bottom: -3px;
+
+      width: 100%;
+      height: 1px;
+
+      content: '';
+
+      background-color: #cdcdcd;
+    }
+  }
+
+  .catalog__button-wrapper {
+    padding: 0 5vw;
+    padding-top: 25px;
+  }
+
+  .catalog__item--expand {
+    display: block;
+    padding-top: 88px;
+
+    background-image: none;
+  }
+
+  .catalog__item-expand-outline-container {
+    height: 100%;
+
+    outline: 1px solid #e6e6e6;
+  }
+
+  .catalog__expand-button {
+    padding: 0;
+  }
+
+  .catalog__expand-svg {
+    width: 60px;
+    height: 60px;
+
+    margin-top: 51px;
+    margin-left: 2px;
+  }
+
+  .catalog__expand-heading {
+    width: 165px;
+    padding-top: 27px;
+    margin: 0 auto;
+
+    font-size: 1.25rem;
+    line-height: 1.2em;
+  }
+
+  .catalog__expand-text {
+    width: 180px;
+
+    margin: 0 auto;
+    margin-top: 5px;
+
+    font-size: 1rem;
+    line-height: 1.2em;
+  }
+
+  .catalog__btn-expand {
+    margin: 0 5vw;
+    margin-top: 67px;
   }
 }
 

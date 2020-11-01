@@ -28,14 +28,15 @@ block content
             +catalogItem(6, 'Slim 1000 г', 1000, 'Гречка', 700, true)
             +catalogItem(7, 'Slim 500 г', 500, 'Рис', 500, true)
             li.catalog__item.catalog__item--expand
-              button.catalog__expand-button
-                +svgSpriteIcon('expand_all', 30, 30, 'catalog__expand-svg', 'показать все товары')
-                b.catalog__expand-heading
-                  | Показать ещё 100500 товаров
-                p.catalog__expand-text
-                  | На самом деле вкусов гораздо больше!
-                span.catalog__btn-expand
-                  | Показать все
+              .catalog__item-expand-outline-container
+                button.catalog__expand-button
+                  +svgSpriteIcon('expand_all', 30, 30, 'catalog__expand-svg', 'показать все товары')
+                  b.catalog__expand-heading
+                    | Показать ещё 100500 товаров
+                  p.catalog__expand-text
+                    | На самом деле вкусов гораздо больше!
+                  span.catalog__btn-expand
+                    | Показать все
 
       section.additional-items
         h2.additional-items__title

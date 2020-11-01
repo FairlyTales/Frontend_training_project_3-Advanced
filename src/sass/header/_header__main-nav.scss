@@ -185,12 +185,20 @@
       height: 2px;
 
       content: '';
-
-      background-color: #fff;
     }
   }
 
-  .main-nav__link {
-    color: #fff;
+  // index page has different main-nav colors
+  .main-nav--index-page {
+    & .main-nav__link {
+      color: #fff;
+    }
+
+    // changing color of the current page item's underline
+    & .main-nav__item--current-page {
+      & .main-nav__link::after {
+        background-color: #fff;
+      }
+    }
   }
 }

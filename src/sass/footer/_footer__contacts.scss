@@ -57,11 +57,11 @@
 
 @media (min-width: vars.$tablet-width) {
   .footer-contacts__text-container {
-    padding: 60px 70px;
+    padding: 60px 10vw;
   }
 
   .footer-contacts__title {
-    width: clamp(190px, 25%, 260px);
+    // width: clamp(190px, 25%, 260px);
     padding-top: 6px;
 
     font-size: 1.25rem;
@@ -69,11 +69,12 @@
   }
 
   .footer-contacts__text {
-    width: clamp(190px, 35%, 260px);
+    // width: clamp(190px, 35%, 260px);
     margin-top: 2px;
 
     font-size: 1rem;
     line-height: 1.25em;
+    text-align: right;
 
     & > br {
       display: initial;
