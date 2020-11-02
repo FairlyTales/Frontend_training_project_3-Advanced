@@ -326,5 +326,6 @@ mixin additionalItem(name, volume, price)
       tr.additional-items__table-row
         td.additional-items__table-cell= volume
         td.additional-items__table-cell= `${price} Р.`
-    button.button.additional-items__button(type='button')
-      | Заказать
+    .additional-items__button-container
+      button.button.additional-items__button(type='button')
+        | Заказать

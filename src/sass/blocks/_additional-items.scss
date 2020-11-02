@@ -112,24 +112,42 @@
   background-position: center center;
   background-size: 280px 289px;
 
-  transition: 0.2s;
-
-  @media (min-width: 321px) {
-    min-height: 200px;
-
-    background-image: url('../img/background_img/gift-photo-tablet.jpg');
-    background-size: 708px 200px;
-  }
+  transition: all 0.2s;
 
   &:hover,
   &:focus {
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-      url('../img/background_img/gift-photo-tablet.jpg');
+      url('../img/background_img/gift-photo-mobile.jpg');
+    background-color: #75b94c;
   }
   &:active {
     .additional-items__advert-svg-icon,
     .additional-items__advert-text {
       opacity: 0.7;
+    }
+  }
+
+  @media (min-width: 321px) {
+    min-height: 200px;
+
+    background-color: #75b94c;
+    background-image: url('../img/background_img/gift-photo-tablet.jpg');
+    background-size: 708px 200px;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('../img/background_img/gift-photo-tablet.jpg');
+
+      background-color: #75b94c;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+    &:active {
+      .additional-items__advert-svg-icon,
+      .additional-items__advert-text {
+        opacity: 0.7;
+      }
     }
   }
 }
@@ -244,10 +262,81 @@
 @media (min-width: vars.$desktop-width) {
   .additional-items__list-and-advert-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
   }
 
   .additional-items__list {
     grid-template-columns: 1fr;
+    grid-auto-rows: 72px;
+    row-gap: 0;
+
+    margin-top: 40px;
+  }
+
+  .additional-items__item {
+    display: grid;
+    grid-template: 'itemName itemTable itemBtn';
+    grid-template-columns: 324px 285px 1fr;
+
+    padding: 0;
+
+    outline: none;
+  }
+
+  .additional-items__item-name-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .additional-items__item-table {
+    display: flex;
+    align-items: center;
+
+    margin: 0;
+
+    & tbody {
+      width: 100%;
+    }
+  }
+  .additional-items__button-container {
+    padding: 20px 20px;
+    padding-left: 40px;
+  }
+
+  .additional-items__button {
+    margin: 0;
+  }
+
+  .additonal-items__advert-container {
+    margin-top: 43px;
+    margin-right: 0;
+  }
+
+  .additonal-items__advert-link {
+    flex-direction: column;
+    align-items: center;
+
+    min-width: 245px;
+    min-height: 289px;
+
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+    background-image: url('../img/background_img/gift-photo-desktop.jpg');
+    background-size: 245px 289px;
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('../img/background_img/gift-photo-desktop.jpg');
+      background-color: #75b94c;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  .additional-items__advert-text {
+    text-align: center;
   }
 }

@@ -222,6 +222,8 @@ function checkDeviceWidth() {
 //* -----------Function calls-------------
 //*
 
-scrollMenuToggle();
 removeNoJsFallback();
+
+// ! scrollMenuToggle выключен на время разработки чтобы не мешать работе PixelParallel, после окончания стилизации страниц включить его
+// scrollMenuToggle();
 checkDeviceWidth();
