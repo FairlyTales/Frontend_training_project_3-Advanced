@@ -44,21 +44,23 @@ block content
 
       section.page-main__additional-items.additional-items
         .additional-items__wrapper
-          .additional-items__title-container
-            h2.additional-items__title
+          h2.additional-items__title
+            span.additional-items__title-text
               | Дополнительные товары
-          ul.additional-items__list
-            +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 100)
-            +additionalItem('Питьевая вода', '5 литров', 50)
-            +additionalItem('Молоко', '1 литр', 100)
-            +additionalItem('Витамины', '1 упаковка (30 г)', 300)
-            //- +additionalItem('Игрушка-дразнилка', '1 шт.', 350)
 
-          .additonal-items__advert-container
-            a.additonal-items__advert-link(href='#')
-              +svgSpriteIcon('icon_present', 55, 60, 'additional-items__advert-svg-icon', 'Изображение подарка')
-              p.additional-items__advert-text
-                | Закажите всё и получите чехол для кота в подарок!
+          .additional-items__list-and-advert-container
+            ul.additional-items__list
+              +additionalItem('Сахарозаменитель', '1 упаковка (100 г)', 100)
+              +additionalItem('Питьевая вода', '5 литров', 50)
+              +additionalItem('Молоко', '1 литр', 100)
+              +additionalItem('Витамины', '1 упаковка (30 г)', 300)
+              //- +additionalItem('Игрушка-дразнилка', '1 шт.', 350)
+
+            .additonal-items__advert-container
+              a.additonal-items__advert-link(href='#')
+                +svgSpriteIcon('icon_present', 55, 60, 'additional-items__advert-svg-icon', 'Изображение подарка')
+                p.additional-items__advert-text
+                  | Закажите всё и получите чехол для кота в подарок!
 
 block footer
   +pageFooter(js_page_id)

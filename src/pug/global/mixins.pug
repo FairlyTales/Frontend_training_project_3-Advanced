@@ -2,7 +2,7 @@
 //- +pageHeader(js_page_id)
 mixin pageHeader(pageId)
   if pageId == 'js-indexPage'
-    header.page-header(id=pageId)
+    header.page-header.page-header--index-page(id=pageId)
       .page-header__wrapper
         a.page-header__logo-link-mobile-only(href='index.html')
           img.page-header__logo-mobile-only(

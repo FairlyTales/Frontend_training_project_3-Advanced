@@ -130,6 +130,41 @@ function catalogShowAmountOfItems(itemsToShow) {
   }
 }
 
+function scrollMenuToggle() {
+  const header = document.querySelector('.page-header');
+  let lastScrollPosition = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // if we are at the top of the page: remove page-header--scroll-up class
+    if (currentScroll <= 0) {
+      header.classList.remove('page-header--scroll-up');
+      return;
+    }
+
+    // add page-header--scroll-down class if we scroll down
+    if (
+      currentScroll > lastScrollPosition &&
+      !header.classList.contains('page-header--scroll-down')
+    ) {
+      header.classList.remove('page-header--scroll-up');
+      header.classList.add('page-header--scroll-down');
+    }
+    // addpage-header--scroll-up if we scroll up
+    else if (
+      currentScroll < lastScrollPosition &&
+      header.classList.contains('page-header--scroll-down')
+    ) {
+      header.classList.remove('page-header--scroll-down');
+      header.classList.add('page-header--scroll-up');
+    }
+
+    // update the last scroll position
+    lastScrollPosition = currentScroll;
+  });
+}
+
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
   const tabletWidth = window.matchMedia('(min-width: 768px)');
@@ -187,5 +222,6 @@ function checkDeviceWidth() {
 //* -----------Function calls-------------
 //*
 
+scrollMenuToggle();
 removeNoJsFallback();
 checkDeviceWidth();

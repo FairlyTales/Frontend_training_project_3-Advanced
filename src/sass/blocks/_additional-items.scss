@@ -5,17 +5,25 @@
 }
 
 .additional-items__title {
-  position: relative;
-  left: -30px;
-  display: block;
-
-  margin: 0;
+  margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 28px;
 
   font-size: 24px;
-  line-height: 1em;
+  line-height: 0.1em;
   text-align: center;
+
+  border-bottom: 3px solid #68b738;
+}
+
+.additional-items__title-text {
+  width: 230px;
+  height: 11px;
+
+  padding: 0 20px;
+  margin: 0 auto;
+
+  background-color: #fff;
 }
 
 .additional-items__list {
@@ -104,17 +112,32 @@
   background-position: center center;
   background-size: 280px 289px;
 
+  transition: 0.2s;
+
   @media (min-width: 321px) {
     min-height: 200px;
 
     background-image: url('../img/background_img/gift-photo-tablet.jpg');
     background-size: 708px 200px;
   }
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+      url('../img/background_img/gift-photo-tablet.jpg');
+  }
+  &:active {
+    .additional-items__advert-svg-icon,
+    .additional-items__advert-text {
+      opacity: 0.7;
+    }
+  }
 }
 
 .additional-items__advert-svg-icon {
   margin-top: 63px;
   fill: #fff;
+  transition: 0.2s;
 
   @media (min-width: 321px) {
     margin-top: 30px;
@@ -131,6 +154,8 @@
   line-height: 1.3em;
   color: #fff;
   text-align: center;
+
+  transition: 0.2s;
 
   @media (min-width: 321px) {
     margin-top: 30px;
@@ -153,10 +178,6 @@
 }
 
 @media (min-width: vars.$tablet-width) {
-  .additional-items__title-container {
-    padding-left: 9vw;
-  }
-
   .additional-items__title {
     margin-bottom: 50px;
 
@@ -165,12 +186,18 @@
     text-align: left;
   }
 
+  .additional-items__title-text {
+    margin-left: 40px;
+  }
+
   .additional-items__list {
-    row-gap: 20px;
-    column-gap: 20px;
+    row-gap: 40px;
+    column-gap: 60px;
   }
 
   .additional-items__item {
+    padding-bottom: 20px;
+
     outline: 1px solid #cdcdcd;
 
     &::after {
@@ -215,4 +242,12 @@
 }
 
 @media (min-width: vars.$desktop-width) {
+  .additional-items__list-and-advert-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .additional-items__list {
+    grid-template-columns: 1fr;
+  }
 }
