@@ -274,6 +274,7 @@
   }
 
   .additional-items__item {
+    position: relative;
     display: grid;
     grid-template: 'itemName itemTable itemBtn';
     grid-template-columns: 324px 285px 1fr;
@@ -281,6 +282,34 @@
     padding: 0;
 
     outline: none;
+
+    // grey line above first item
+    &:first-child::before {
+      position: absolute;
+      top: 3px;
+      right: 20px;
+      left: 0;
+
+      height: 1px;
+
+      content: '';
+
+      background-color: #cdcdcd;
+    }
+
+    // grey underline
+    &::after {
+      position: absolute;
+      right: 20px;
+      bottom: -4px;
+      left: 0;
+
+      height: 1px;
+
+      content: '';
+
+      background-color: #cdcdcd;
+    }
   }
 
   .additional-items__item-name-link {

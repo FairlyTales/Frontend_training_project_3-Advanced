@@ -4,14 +4,14 @@ mixin pageHeader(pageId)
   if pageId == 'js-indexPage'
     header.page-header.page-header--index-page(id=pageId)
       .page-header__wrapper
-        a.page-header__logo-link-mobile-only(href='index.html')
+        a.page-header__logo-link-mobile-only
           img.page-header__logo-mobile-only(
             src='/img/content_svg/logo_mobile.svg',
             width='33',
             height='38',
             alt='Малый логотип Cat Energy'
           )
-        a.page-header__logo-link(href='index.html')
+        .page-header__logo-link
           picture
             source(
               media='(min-width: 1440px)',
