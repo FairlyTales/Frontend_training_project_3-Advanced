@@ -1,6 +1,360 @@
 @use 'global/variables' as vars;
 @use 'global/mixin' as mixins;
 
+.program__title {
+  padding: 0 10vw;
+  margin: 0 auto;
+
+  font-size: 1.125rem;
+  line-height: 1.2em;
+}
+
+.program__form {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  padding: 0 20px;
+}
+
+.program__fieldset {
+  position: relative;
+
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+
+  font-size: 1rem;
+  line-height: 1.2em;
+
+  border: none;
+
+  &--cat-info {
+    margin-top: 35px;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+    left: 0;
+
+    height: 1px;
+
+    content: '';
+
+    background-color: #e6e6e6;
+  }
+}
+
+.program__fieldset-list {
+  @include mixins.reset-list;
+}
+
+.program__fieldset-list-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.program__text-label {
+  margin-right: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.program__text-input {
+  flex-grow: 1;
+
+  padding: 12px 15px;
+  margin: 0;
+
+  border: none;
+  border: 1px solid #e6e6e6;
+
+  &::placeholder {
+    text-transform: uppercase;
+    opacity: 1;
+  }
+
+  &:focus,
+  &:hover {
+    border-color: #cdcdcd;
+  }
+
+  &:active {
+    border-color: #444;
+  }
+}
+
+.program__fieldset-list--program {
+  padding-top: 22px;
+  padding-left: 45px;
+}
+
+.program__fieldset-list-item--program {
+  margin-bottom: 23px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// custom radio button
+.program__input-radio + .program__program-selection-label::before {
+  position: absolute;
+  top: -6px;
+  left: -45px;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+  border-radius: 50%;
+
+  transition: 0.1s;
+}
+
+// custom radio button hover, focus
+.program__input-radio:hover + .program__program-selection-label::before,
+.program__input-radio:focus + .program__program-selection-label::before {
+  border-color: #868686;
+}
+
+// custom radio button active
+.program__input-radio:active + .program__program-selection-label::before,
+.program__input-radio:active + .program__program-selection-label {
+  opacity: 0.5;
+}
+
+// custom radio button checked symbol
+.program__input-radio:checked + .program__program-selection-label::after {
+  position: absolute;
+  top: 3px;
+  left: -36px;
+
+  width: 12px;
+  height: 12px;
+
+  content: '';
+
+  background-color: vars.$basic-green;
+  border-radius: 50%;
+
+  transition: 0.1s;
+}
+
+.program__program-selection-label {
+  position: relative;
+
+  font-size: 1rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.program__fieldset--contact-info {
+  margin-top: 30px;
+}
+
+.program__fieldset-legend {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+
+  line-height: 0.01px;
+  border-bottom: 3px solid #68b738;
+}
+
+.program__fieldset-legend-text {
+  height: 50px;
+  padding-right: 20px;
+
+  font-size: 24px;
+  background-color: #fff;
+}
+
+.program__text-input--phone,
+.program__text-input--mail {
+  padding-right: 40px;
+}
+
+.program__icon-phone {
+  position: absolute;
+  right: 13px;
+  transition: 0.1s;
+}
+
+.program__icon-mail {
+  position: absolute;
+  right: 17px;
+  transition: 0.1s;
+}
+
+.program__text-input--phone:active + .program__icon-phone,
+.program__text-input--mail:active + .program__icon-mail {
+  fill: vars.$basic-green;
+}
+
+.program__fieldset--additional-comment {
+  margin-top: 15px;
+}
+
+.program__textarea {
+  width: 100%;
+
+  padding: 10px 10px;
+  margin: 0;
+  margin-top: 13px;
+
+  resize: none;
+
+  border: 0;
+  border: 1px solid #e6e6e6;
+
+  transition: 0.1s;
+
+  &::placeholder {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: #cdcdcd;
+  }
+
+  &:active {
+    border-color: #444;
+  }
+}
+
+.program__fieldset--additional-items {
+  margin-top: 25px;
+  margin-bottom: 15px;
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.program__fieldset-additional-items-list {
+  padding: 0 20px;
+  margin-top: 12px;
+}
+
+.program__fieldset-additional-items-item {
+  padding-bottom: 10px;
+}
+
+.program__additional-item-label {
+  padding-left: 25px;
+
+  font-size: 1rem;
+  line-height: 1.2em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+// custom checkbox
+.program__input-checkbox + .program__additional-item-label::before {
+  position: absolute;
+  top: -5px;
+  left: -20px;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  content: '';
+
+  background-color: #fff;
+  border: 1px solid #d0d0d0;
+
+  transition: 0.1s;
+}
+
+// custom checkbox hover, focus
+.program__input-checkbox:hover + .program__additional-item-label::before,
+.program__input-checkbox:focus + .program__additional-item-label::before {
+  border-color: #868686;
+}
+
+// custom checkbox active
+.program__input-checkbox:active + .program__additional-item-label::before,
+.program__input-checkbox:active + .program__additional-item-label {
+  opacity: 0.5;
+}
+
+// custom checkbox checked symbol
+.program__input-checkbox:checked + .program__additional-item-label::after {
+  position: absolute;
+  top: 3px;
+  left: -15px;
+
+  width: 21px;
+  height: 16px;
+
+  content: '';
+
+  background-image: url('../img/background_svg/checkbox_arrow.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  transition: 0.1s;
+}
+
+.program__submit-button {
+  width: 100%;
+
+  padding: 13px 10px;
+  margin: 0 auto;
+
+  font-size: 1rem;
+}
+
+.program__submit-button-legend {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  font-family: 'Arial', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.2em;
+
+  text-align: center;
+}
+
+// @media (min-width: 560px) {
+//   .program__form {
+//     grid-template-columns: 1fr 1fr;
+//     column-gap: 20px;
+//     align-content: center;
+//     justify-content: center;
+//   }
+
+//   .program__fieldset--program-selection {
+//     margin-top: 35px;
+//   }
+// }
+
 @media (min-width: vars.$tablet-width) {
 }
 

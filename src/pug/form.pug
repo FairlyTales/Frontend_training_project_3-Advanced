@@ -4,7 +4,7 @@ block vars
   - var js_page_id = "js-formPage";
   - var page_title = "Подбор программы";
   - var page_decription = "Cat Enegry - функциональное питание для котов. Подбор программы питания.";
-  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов, Подбор программы";
+  - var page_keywords = "Cat Enegry, питание для котов, похудение, похудение для котов, подбор программы";
 
 block header
   +pageHeader(js_page_id)
@@ -24,31 +24,37 @@ block content
           fieldset.program__fieldset.program__fieldset--cat-info
             legend.visually-hidden
               | Имя, вес и возраст кота
-            ul.program__fieldset-list
+            ul.program__fieldset-list.program__fieldset-list--name
               li.program__fieldset-list-item
-                label(for='catName') Имя:*
-                input#catName.program__form--input(
+                label.program__text-label.program__text-label--name(
+                  for='catName'
+                ) Имя:*
+                input#catName.program__text-input(
                   type='text',
                   name='catName',
-                  placeholder='Барсик',
+                  placeholder='Матроскин',
                   required,
                   autocomplete='on',
                   autofocus
                 )
               li.program__fieldset-list-item
-                label(for='catWeight') Вес (Кг):*
-                input#catWeight.program__form--input(
-                  type='text',
+                label.program__text-label.program__text-label--weight(
+                  for='catWeight'
+                ) Вес (Кг):*
+                input#catWeight.program__text-input(
+                  type='number',
                   name='catWeight',
-                  placeholder='7',
+                  placeholder='4',
                   required,
                   autocomplete='on'
                 )
               li.program__fieldset-list-item
-                label(for='client-surname') Возраст (Лет)
-                input#catWeight.program__form--input(
-                  type='text',
-                  name='catWeight',
+                label.program__text-label.program__text-label--age(
+                  for='catAge'
+                ) Возраст (Лет):
+                input#catAge.program__text-input(
+                  type='number',
+                  name='catAge',
                   placeholder='7',
                   autocomplete='on'
                 )
@@ -56,24 +62,26 @@ block content
           fieldset.program__fieldset.program__fieldset--program-selection
             legend.visually-hidden
               | Выбор программы питания
-            ul.program__fieldset-list
-              li.program__fieldset-list-item
-                input#weightLoss.visually-hidden-not-focusable(
+            ul.program__fieldset-list.program__fieldset-list--program
+              li.program__fieldset-list-item.program__fieldset-list-item--program
+                input#weightLoss.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
                   name='programSelection',
-                  required
+                  required,
+                  checked
                 )
                 label.program__program-selection-label(for='weightLoss') Похудение
 
-              li.program__fieldset-list-item
-                input#weigthGain.visually-hidden-not-focusable(
+              li.program__fieldset-list-item.program__fieldset-list-item--program
+                input#weigthGain.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
                   name='programSelection',
                   required
                 )
                 label.program__program-selection-label(for='weigthGain') Набор массы
-              li.program__fieldset-list-item
-                input#weightDunno.visually-hidden-not-focusable(
+
+              li.program__fieldset-list-item.program__fieldset-list-item--program
+                input#weightDunno.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
                   name='programSelection',
                   required
@@ -82,61 +90,67 @@ block content
 
           fieldset.program__fieldset.program__fieldset--contact-info
             legend.program__fieldset-legend
-              | Контактные данные (владельца кота)
+              span.program__fieldset-legend-text
+                | Контактные данные
             ul.program__fieldset-list
               li.program__fieldset-list-item
-                label(for='catName') E-Mail:*
-                input#catName.program__form--input(
+                label.program__text-label(for='email') E-Mail:*
+                input#email.program__text-input.program__text-input--mail(
                   type='email',
                   name='email',
                   placeholder='kuklachev@gmail.com',
                   required,
                   autocomplete='on'
                 )
+                +svgSpriteIcon('icon_mail', 17, 13, 'program__icon-mail', 'иконка электронной почты')
+
               li.program__fieldset-list-item
-                label(for='catName') Телефон:*
-                input#catName.program__form--input(
-                  type='email',
-                  name='email',
-                  placeholder='kuklachev@gmail.com',
+                label.program__text-label(for='phone') Телефон:*
+                input#phone.program__text-input.program__text-input--phone(
+                  type='tel',
+                  name='phone',
+                  placeholder='8 800 555 35 35',
                   required,
                   autocomplete='on'
                 )
+                +svgSpriteIcon('icon_phone', 20, 20, 'program__icon-phone', 'иконка телефона')
 
           fieldset.program__fieldset.program__fieldset--additional-comment
             legend.program__fieldset-legend
-              | Комментарий
+              span.program__fieldset-legend-text
+                | Комментарий
             textarea#catAdditionalInfo.program__textarea(
               name='catAdditionalInfo',
               placeholder='Расскажите обо всех повадках кота',
-              cols='30',
+              cols='43',
               rows='7'
             )
 
           fieldset.program__fieldset.program__fieldset--additional-items
             legend.program__fieldset-legend
-              | Дополнительно
-            ul.program__fieldset-list
-              li.program__fieldset-list-item
-                input#sweetener.visually-hidden-not-focusable(
+              span.program__fieldset-legend-text
+                | Дополнительно
+            ul.program__fieldset-additional-items-list
+              li.program__fieldset-list-item.program__fieldset-additional-items-item
+                input#sweetener.visually-hidden-not-focusable.program__input-checkbox(
                   type='checkbox',
                   name='sweetener'
                 )
                 label.program__additional-item-label(for='sweetener') Сахарозаменитель
-              li.program__fieldset-list-item
-                input#water.visually-hidden-not-focusable(
+              li.program__fieldset-list-item.program__fieldset-additional-items-item
+                input#water.visually-hidden-not-focusable.program__input-checkbox(
                   type='checkbox',
                   name='water'
                 )
                 label.program__additional-item-label(for='water') Питьевая вода
-              li.program__fieldset-list-item
-                input#milk.visually-hidden-not-focusable(
+              li.program__fieldset-list-item.program__fieldset-additional-items-item
+                input#milk.visually-hidden-not-focusable.program__input-checkbox(
                   type='checkbox',
                   name='milk'
                 )
                 label.program__additional-item-label(for='milk') Молоко
-              li.program__fieldset-list-item
-                input#vitamins.visually-hidden-not-focusable(
+              li.program__fieldset-list-item.program__fieldset-additional-items-item
+                input#vitamins.visually-hidden-not-focusable.program__input-checkbox(
                   type='checkbox',
                   name='vitamins'
                 )
