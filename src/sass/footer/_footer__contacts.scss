@@ -3,12 +3,10 @@
 
 .footer-contacts__text-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
-  padding: 0 20px;
-  padding-top: 28px;
-  padding-bottom: 25px;
+  padding: 25px 20px;
 }
 
 .footer-contacts__title {
@@ -28,7 +26,7 @@
   font-family: 'Arial', sans-serif;
   font-size: 0.875rem;
   line-height: 20px;
-  text-align: left;
+  text-align: right;
 
   @media (min-width: 396px) {
     padding-left: 10px;
@@ -49,15 +47,9 @@
   height: 363px;
 }
 
-@media (min-width: 560px) {
-  .footer-contacts__text {
-    text-align: right;
-  }
-}
-
 @media (min-width: vars.$tablet-width) {
   .footer-contacts__text-container {
-    padding: 60px 10vw;
+    padding: 25px 10vw;
   }
 
   .footer-contacts__title {
@@ -68,7 +60,6 @@
   }
 
   .footer-contacts__text {
-    // width: clamp(190px, 35%, 260px);
     margin-top: 2px;
 
     font-size: 1rem;
