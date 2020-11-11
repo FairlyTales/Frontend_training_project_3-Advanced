@@ -20,7 +20,7 @@ block content
           | Анкета выбора программы питания
         p.program__title
           | Заполните анкету и мы подберём программу питания для вашего кота
-        form.program__form
+        form#ourOnlyForm.program__form
           fieldset.program__fieldset.program__fieldset--cat-info
             legend.visually-hidden
               | Имя, вес и возраст кота
@@ -67,7 +67,6 @@ block content
                 input#weightLoss.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
                   name='programSelection',
-                  required,
                   checked
                 )
                 label.program__program-selection-label(for='weightLoss') Похудение
@@ -75,16 +74,14 @@ block content
               li.program__fieldset-list-item.program__fieldset-list-item--program
                 input#weigthGain.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
-                  name='programSelection',
-                  required
+                  name='programSelection'
                 )
                 label.program__program-selection-label(for='weigthGain') Набор массы
 
               li.program__fieldset-list-item.program__fieldset-list-item--program
                 input#weightDunno.program__input-radio.visually-hidden-not-focusable(
                   type='radio',
-                  name='programSelection',
-                  required
+                  name='programSelection'
                 )
                 label.program__program-selection-label(for='weightDunno') Не знаю (нужен ваш совет)
 
@@ -169,7 +166,10 @@ block content
                 label.program__additional-item-label(for='Bowl') Миска
 
           .program__submit-button-container
-            button.button.program__submit-button(type='submit')
+            button.button.program__submit-button(
+              type='submit',
+              for='ourOnlyForm'
+            )
               | Отправить заявку
             span.program__submit-button-legend
               | * &mdash; Обязательные поля

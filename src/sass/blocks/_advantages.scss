@@ -26,6 +26,10 @@
 
 .advantages__item {
   position: relative;
+
+  display: flex;
+  align-items: center;
+
   min-height: 50px;
 
   padding-left: 80px;

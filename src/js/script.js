@@ -80,10 +80,22 @@ function imgCompareButtons() {
 
 function catalogExpandCollapse() {
   const expandButton = document.querySelector('.catalog__expand-button');
+  const catalogItems = document.querySelectorAll('.catalog__item ');
   const hiddenCatalogItems = document.querySelectorAll(
     '.catalog__item--hidden'
   );
   let itemsHidden = true;
+  let lastItemPositon = 0;
+
+  // get the Y position of the last non-hidden item
+  catalogItems.forEach((item) => {
+    if (
+      !item.classList.contains('catalog__item--hidden') &&
+      !item.classList.contains('catalog__item--expand')
+    ) {
+      lastItemPositon = item.offsetTop;
+    }
+  });
 
   expandButton.addEventListener('click', expandCollapse);
 
@@ -92,23 +104,34 @@ function catalogExpandCollapse() {
       hiddenCatalogItems.forEach((item) => {
         item.style.display = 'grid';
       });
+
+      window.scrollTo({
+        top: lastItemPositon - 160,
+        behavior: 'smooth',
+      });
+
       expandButton.querySelector('.catalog__expand-heading').innerText =
         'Скрыть 100500 товаров';
       expandButton.querySelector('.catalog__expand-text').innerText =
         'Теперь я знаю что вкусов гораздо больше!';
       expandButton.querySelector('.catalog__btn-expand').innerText =
         'Скрыть товары';
+
       itemsHidden = false;
     } else {
       hiddenCatalogItems.forEach((item) => {
         item.style.display = 'none';
       });
+
+      expandButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
       expandButton.querySelector('.catalog__expand-heading').innerText =
         'Показать ещё 100500 товаров';
       expandButton.querySelector('.catalog__expand-text').innerText =
         'На самом деле вкусов гораздо больше!';
       expandButton.querySelector('.catalog__btn-expand').innerText =
         'Показать все';
+
       itemsHidden = true;
     }
   }
@@ -165,6 +188,39 @@ function scrollMenuToggle() {
   });
 }
 
+function formSubmit() {
+  const form = document.querySelector('form');
+  const requiredItems = document.querySelectorAll('[required]');
+  const submitBtn = document.querySelector('.program__submit-button');
+
+  // remove error class if the input value is inputed by user
+  requiredItems.forEach((item) =>
+    item.addEventListener('input', (evt) => {
+      if (item.classList.contains('program__text-input--error'))
+        item.classList.remove('program__text-input--error');
+    })
+  );
+
+  // try to submit the form, if not all of the required inputs are filled don't submit the form and tell user to fill them
+  submitBtn.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    let allRequiredInputsFilled = true;
+
+    requiredItems.forEach((item) => {
+      if (!item.validity.valid) {
+        item.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        item.classList.add('program__text-input--error');
+        allRequiredInputsFilled = false;
+      }
+    });
+
+    if (allRequiredInputsFilled) {
+      form.submit();
+      submitBtn.disabled = true;
+    }
+  });
+}
+
 // function that launches all scripts according to the current page and screen size
 function checkDeviceWidth() {
   const tabletWidth = window.matchMedia('(min-width: 768px)');
@@ -183,6 +239,7 @@ function checkDeviceWidth() {
         break;
 
       case 'js-formPage':
+        formSubmit();
         break;
     }
   } else if (tabletWidth.matches) {
@@ -197,6 +254,7 @@ function checkDeviceWidth() {
         break;
 
       case 'js-formPage':
+        formSubmit();
         break;
     }
   } else {
@@ -213,6 +271,7 @@ function checkDeviceWidth() {
         break;
 
       case 'js-formPage':
+        formSubmit();
         break;
     }
   }
@@ -223,7 +282,5 @@ function checkDeviceWidth() {
 //*
 
 removeNoJsFallback();
-
-// ! scrollMenuToggle выключен на время разработки чтобы не мешать работе PixelParallel, после окончания стилизации страниц включить его
 scrollMenuToggle();
 checkDeviceWidth();

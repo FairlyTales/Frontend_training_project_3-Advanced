@@ -2,34 +2,46 @@
 @use 'global/mixin' as mixins;
 
 .footer-contacts__text-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr clamp(160px, 50%, 340px) clamp(160px, 50%, 340px) 1fr;
 
-  padding: 25px 20px;
+  padding: 20px 0;
 }
 
 .footer-contacts__title {
-  flex: 1 1 140px;
-  max-width: 321px;
+  grid-column: 2;
+
+  max-width: 160px;
+
+  padding-left: 20px;
   margin: 0;
 
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 1.3em;
   text-transform: uppercase;
+
+  @media (min-width: 505px) {
+    max-width: 210px;
+  }
 }
 
 .footer-contacts__text {
-  flex: 1 1 140px;
+  grid-column: 3;
+
+  max-width: 160px;
+
+  padding-right: 20px;
   margin: 0;
+  margin-left: auto;
 
   font-family: 'Arial', sans-serif;
   font-size: 0.875rem;
-  line-height: 20px;
+  line-height: 1.3em;
   text-align: right;
 
-  @media (min-width: 396px) {
-    padding-left: 10px;
+  @media (min-width: 505px) {
+    max-width: none;
+
     & > br {
       display: none;
     }
@@ -49,21 +61,22 @@
 
 @media (min-width: vars.$tablet-width) {
   .footer-contacts__text-container {
-    padding: 25px 10vw;
+    display: grid;
+    grid-template-columns: 1fr clamp(354px, 40%, 550px) clamp(354px, 40%, 550px) 1fr;
+
+    padding: 40px 0;
   }
 
   .footer-contacts__title {
-    padding-top: 6px;
+    padding: 0;
 
     font-size: 1.25rem;
-    line-height: 1.25em;
   }
 
   .footer-contacts__text {
-    margin-top: 2px;
+    padding: 0;
 
     font-size: 1rem;
-    line-height: 1.25em;
     text-align: right;
 
     & > br {
@@ -89,6 +102,9 @@
     position: absolute;
     top: 100px;
     left: 110px;
+
+    display: flex;
+    justify-content: space-between;
 
     width: 570px;
 
