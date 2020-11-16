@@ -17,6 +17,10 @@
   &--scroll-up {
     transform: none;
   }
+
+  &--no-js {
+    position: relative;
+  }
 }
 
 .page-header__wrapper {

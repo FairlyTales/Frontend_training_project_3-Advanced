@@ -2,7 +2,7 @@
 //- +pageHeader(js_page_id)
 mixin pageHeader(pageId)
   if pageId == 'js-indexPage'
-    header.page-header.page-header--index-page(id=pageId)
+    header.page-header.page-header--index-page.page-header--no-js(id=pageId)
       .page-header__wrapper
         a.page-header__logo-link-mobile-only
           img.page-header__logo-mobile-only(
@@ -55,7 +55,7 @@ mixin pageHeader(pageId)
                 li.main-nav__item.main-nav__item--form-page
                   a.main-nav__link(href='form.html') Подбор программы
   else
-    header.page-header(id=pageId)
+    header.page-header.page-header--no-js(id=pageId)
       .page-header__wrapper
         a.page-header__logo-link-mobile-only(href='index.html')
           img.page-header__logo-mobile-only(

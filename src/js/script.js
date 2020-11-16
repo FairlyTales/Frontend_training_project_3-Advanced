@@ -4,6 +4,7 @@
 
 function removeNoJsFallback() {
   document.querySelector('.main-nav').classList.remove('main-nav--no-js');
+  document.querySelector('.page-header').classList.remove('page-header--no-js');
 }
 
 function removeLogoLinksMobileVersion() {

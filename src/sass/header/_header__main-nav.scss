@@ -88,13 +88,20 @@
 
     &--no-js {
       position: initial;
+      top: 66px;
+      right: 0;
 
       width: auto;
       height: auto;
       margin: 0;
 
+      clip: auto;
+      clip-path: none;
+
+      font-size: 1.25rem;
+
       & .main-nav__wrapper {
-        width: 90vw;
+        width: 320px;
       }
     }
   }
