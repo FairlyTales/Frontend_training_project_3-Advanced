@@ -133,7 +133,8 @@
     // background image, with cat
     &::after {
       position: absolute;
-      top: -168px;
+      // top: -168px;
+      top: -128px;
       right: -111px;
       z-index: -2;
 

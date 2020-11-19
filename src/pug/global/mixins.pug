@@ -6,7 +6,7 @@ mixin pageHeader(pageId)
       .page-header__wrapper
         a.page-header__logo-link-mobile-only
           img.page-header__logo-mobile-only(
-            src='/img/content_svg/logo_mobile.svg',
+            src='./img/content_svg/logo_mobile.svg',
             width='33',
             height='38',
             alt='Малый логотип Cat Energy'
@@ -15,14 +15,14 @@ mixin pageHeader(pageId)
           picture
             source(
               media='(min-width: 1440px)',
-              srcset='/img/content_svg/logo_desktop.svg'
+              srcset='./img/content_svg/logo_desktop.svg'
             )
             source(
               media='(min-width: 768px)',
-              srcset='/img/content_svg/logo_tablet.svg'
+              srcset='./img/content_svg/logo_tablet.svg'
             )
             img.page-header__logo(
-              src='/img/content_svg/logo_mobile_text.svg',
+              src='./img/content_svg/logo_mobile_text.svg',
               width='101',
               height='18',
               alt='Логотип Cat Energy'
@@ -54,12 +54,16 @@ mixin pageHeader(pageId)
               else
                 li.main-nav__item.main-nav__item--form-page
                   a.main-nav__link(href='form.html') Подбор программы
+
+              li.main-nav__item.main-nav__item--form-page
+                a.main-nav__link(href='https://fairlytales.github.io/') Назад в портфолио
+
   else
     header.page-header.page-header--no-js(id=pageId)
       .page-header__wrapper
         a.page-header__logo-link-mobile-only(href='index.html')
           img.page-header__logo-mobile-only(
-            src='/img/content_svg/logo_mobile.svg',
+            src='./img/content_svg/logo_mobile.svg',
             width='33',
             height='38',
             alt='Малый логотип Cat Energy'
@@ -68,14 +72,14 @@ mixin pageHeader(pageId)
           picture
             source(
               media='(min-width: 1440px)',
-              srcset='/img/content_svg/logo_desktop.svg'
+              srcset='./img/content_svg/logo_desktop.svg'
             )
             source(
               media='(min-width: 768px)',
-              srcset='/img/content_svg/logo_tablet.svg'
+              srcset='./img/content_svg/logo_tablet.svg'
             )
             img.page-header__logo(
-              src='/img/content_svg/logo_mobile_text.svg',
+              src='./img/content_svg/logo_mobile_text.svg',
               width='101',
               height='18',
               alt='Логотип Cat Energy'
@@ -108,6 +112,9 @@ mixin pageHeader(pageId)
                 li.main-nav__item.main-nav__item--form-page
                   a.main-nav__link(href='form.html') Подбор программы
 
+              li.main-nav__item.main-nav__item--form-page
+                a.main-nav__link(href='https://fairlytales.github.io/') Назад в портфолио
+
 //- add page footer
 //- +pageFooter(js_page_id)
 mixin pageFooter(pageId)
@@ -139,7 +146,7 @@ mixin pageFooter(pageId)
           .footer-social__wrapper
             a.footer-social__main-page-link(href='index.html')
               img.footer-social__main-page-link-img(
-                src='/img/content_svg/logo_footer.svg',
+                src='./img/content_svg/logo_footer.svg',
                 width='128',
                 height='24',
                 alt='Логотип Cat Energy'
@@ -189,7 +196,7 @@ mixin pageFooter(pageId)
           .footer-social__wrapper
             a.footer-social__main-page-link(href='index.html')
               img.footer-social__main-page-link-img(
-                src='/img/content_svg/logo_footer.svg',
+                src='./img/content_svg/logo_footer.svg',
                 width='128',
                 height='24',
                 alt='Логотип Cat Energy'
@@ -216,7 +223,7 @@ mixin pageFooter(pageId)
 mixin svgSpriteIcon(name, width, height, BEMclass, title)
   svg(class="sprite sprite__" + name + " " + BEMclass, width=width, height=height)
     title= title
-    use(href="img/sprite/sprite.svg#" + name)
+    use(href="./img/sprite/sprite.svg#" + name)
 
 //- create new item in catalog__list
 //- +catalogItem(imgNumber, 'Name', volume, 'taste', price)
@@ -227,28 +234,28 @@ mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
         picture
           source(
             media='(min-width: 1200px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-desktop.webp`,
             type='image/webp'
           )
           source(
             media='(min-width: 1200px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+            srcset=`./img/content_img/catalog-${imgNumber}-desktop.png`
           )
           source(
             media='(min-width: 768px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-tablet.webp`,
             type='image/webp'
           )
           source(
             media='(min-width: 768px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+            srcset=`./img/content_img/catalog-${imgNumber}-tablet.png`
           )
           source(
-            srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-mobile.webp`,
             type='image/webp'
           )
           img.catalog__item-image(
-            src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+            src=`./img/content_img/catalog-${imgNumber}-mobile.jpg`,
             width='140',
             height='144',
             alt='Изображение продукта'
@@ -274,28 +281,28 @@ mixin catalogItem(imgNumber, name, volume, taste, price, hidden)
         picture
           source(
             media='(min-width: 1200px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-desktop.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-desktop.webp`,
             type='image/webp'
           )
           source(
             media='(min-width: 1200px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-desktop.png`
+            srcset=`./img/content_img/catalog-${imgNumber}-desktop.png`
           )
           source(
             media='(min-width: 768px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-tablet.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-tablet.webp`,
             type='image/webp'
           )
           source(
             media='(min-width: 768px)',
-            srcset=`/img/content_img/catalog-${imgNumber}-tablet.png`
+            srcset=`./img/content_img/catalog-${imgNumber}-tablet.png`
           )
           source(
-            srcset=`/img/content_img/catalog-${imgNumber}-mobile.webp`,
+            srcset=`./img/content_img/catalog-${imgNumber}-mobile.webp`,
             type='image/webp'
           )
           img.catalog__item-image(
-            src=`/img/content_img/catalog-${imgNumber}-mobile.jpg`,
+            src=`./img/content_img/catalog-${imgNumber}-mobile.jpg`,
             width='140',
             height='144',
             alt='Изображение продукта'

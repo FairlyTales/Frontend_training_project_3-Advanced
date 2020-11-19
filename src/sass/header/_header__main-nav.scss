@@ -120,15 +120,16 @@
   .main-nav__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding-right: 2%;
+    justify-content: space-around;
+
+    min-width: 550px;
 
     font-weight: normal;
     line-height: 1.4em;
   }
 
   .main-nav__item {
-    flex: 1 1 170px;
+    flex: 1 1 200px;
     transition: 0.1s;
 
     &--index-page {
@@ -161,13 +162,18 @@
   }
 }
 
+@media (min-width: 900px) {
+  .main-nav__list {
+    justify-content: space-between;
+  }
+}
+
 @media (min-width: vars.$desktop-width) {
   .main-nav__wrapper {
     padding-right: 70px;
   }
 
   .main-nav__list {
-    max-width: 500px;
     padding-right: 0;
     font-size: 1.25rem;
   }
