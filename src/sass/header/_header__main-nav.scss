@@ -120,7 +120,7 @@
   .main-nav__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     min-width: 550px;
 
@@ -159,12 +159,6 @@
 
       background-color: vars.$basic-green;
     }
-  }
-}
-
-@media (min-width: 900px) {
-  .main-nav__list {
-    justify-content: space-between;
   }
 }
 
