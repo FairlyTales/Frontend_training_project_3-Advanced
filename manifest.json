@@ -1,7 +1,7 @@
 {
   "name": "Cat Energy",
   "short_name": "Cat Energy",
-  "start_url": "/?home=true",
+  "start_url": "https://fairlytales.github.io/Frontend_training_project_3-Advanced/index.html",
   "icons": [
     {
       "src": "img/favicon/manifest-icon-192.png",
