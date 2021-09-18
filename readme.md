@@ -1,3 +1,3 @@
 # Training project 3
 
-Responsive layout, CSS Grid, Sass, Pug, Gulp, linters, Npm, BEM.
+PWA, responsive layout, CSS Grid, Sass, Pug, Gulp, linters, Npm, BEM.
