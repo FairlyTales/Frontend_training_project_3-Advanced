@@ -1,0 +1,11 @@
+{
+  "name": "Cat Energy",
+  "short_name": "Cat Energy",
+  "start_url": "/?home=true",
+  "icons": [
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
